@@ -3,7 +3,10 @@
 
   angular
     .module('angularApp')
-    .factory('githubContributor', githubContributor);
+    .factory('githubContributor', githubContributor)
+    .factory('userLogin', userLogin)
+    .factory('userRegiste', userRegiste);
+
 
   /** @ngInject */
   function githubContributor($log, $http) {
@@ -34,4 +37,49 @@
       }
     }
   }
+
+
+  function userLogin($log, $http, apiHost) {
+    var service = {
+      signIn: signIn
+    };
+    return service;
+
+    function signIn(user) {
+      console.log(user);
+      return $http.post(apiHost + '/login/', user)
+        .then(getContributorsComplete)
+        .catch(getContributorsFailed);
+
+      function getContributorsComplete(response) {
+        return response.data;
+      }
+
+      function getContributorsFailed(error) {
+        $log.error('XHR Failed for getContributors.\n' + angular.toJson(error.data, true));
+      }
+    }
+  }
+
+  function userRegiste($log, $http, apiHost) {
+    var service = {
+      registe: registe
+    };
+    return service;
+    function registe(user) {
+      console.log(user);
+      return $http.post(apiHost + '/register/', user)
+        .then(getContributorsComplete)
+        .catch(getContributorsFailed);
+
+      function getContributorsComplete(response) {
+        return response.data;
+      }
+
+      function getContributorsFailed(error) {
+        $log.error('XHR Failed for getContributors.\n' + angular.toJson(error.data, true));
+      }
+    }
+  }
+
 })();

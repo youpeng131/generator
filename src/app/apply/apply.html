@@ -1,0 +1,113 @@
+<!-- 主体页面开始 -->
+<div class="apply">
+  <div class="div-c">
+    <div class="apply1">
+      <img src="assets/images/aplly_big_img.png" alt="">
+    </div>
+    <div class="apply2">
+      <div class="fl">用户名：<input type="text"></div>
+      <div class="fl">密&nbsp;码：<input type="password"></div>
+      <div class="fl">
+        <button>登&nbsp;陆</button>
+        <a href="javascript:void(0)">还没注册？</a></div>
+      <div class="fr"><input type="text" placeholder="软件搜索" ng-model="vm.search">
+        <img src="assets/images/search.png" ng-click="search(vm.search)" alt="" class="search">
+      </div>
+    </div>
+    <div class="apply3">
+      <div class="apply3-left">
+        <div class="apply3-l-top">
+          <div class="apply3-list" ng-repeat="list in gameList">
+            <a href="javascript:void(0)" ng-href="#/applycontent/{{list.id}}/"><img ng-src="{{list.img}}" alt=""
+                                                                                    class="apply-img"></a>
+
+            <div class="apply3-list-bottom">
+              <div class="apply-list-tit"><a ng-href="#/applycontent/{{list.id}}/">{{list.name}}</a></div>
+              <div class="apply-list-con">
+                <div class="star fl">
+                  <div class="star-part">
+                    <span ng-style="{'width':'{{list.star_live * 20}}'+'%'}" class="star-on"></span>
+                    <span class="star-off"></span>
+                  </div>
+                </div>
+                <div class="style fr">
+                  <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'windows'"
+                       src="assets/images/style4.png" alt="">
+                  <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'iphone'"
+                       src="assets/images/style2.png" alt="">
+                  <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'android'"
+                       src="assets/images/style1.png" alt="">
+                  <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'Linux'"
+                       src="assets/images/style3.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="apply3-l-bottom">
+          <div class="apply3-lb-tit">
+            <div class="fl">最新发布</div>
+            <div class="fr"><a href="javascript:void(0)">更多</a></div>
+          </div>
+          <div class="apply3-lb-con">
+            <div class="apply3-list-new" ng-repeat="new in newEst">
+              <div class="apply3-new-img"><a ng-href="#/applycontent/{{new.id}}/"><img ng-src="{{new.img}}" alt=""></a>
+              </div>
+              <div class="apply3-new-txt1"><a ng-href="#/applycontent/{{new.id}}/">{{new.txt1}}</a></div>
+              <div class="apply3-new-txt2"><a ng-href="#/applycontent/{{new.id}}/">{{new.txt2}}</a></div>
+              <div class="apply3-new-style">
+                <img ng-repeat="platForm in new.plat_form" ng-show="platForm == 'windows'"
+                     src="assets/images/style4.png" alt="">
+                <img ng-repeat="platForm in new.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png"
+                     alt="">
+                <img ng-repeat="platForm in new.plat_form" ng-show="platForm == 'android'"
+                     src="assets/images/style1.png" alt="">
+                <img ng-repeat="platForm in new.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
+                     alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="apply3-right">
+        <div class="rank-tit" ng-init="vm.activeTab=1">
+          <div class="download-rank" ng-class="{active: vm.activeTab == 1}" ng-click="vm.activeTab = 1">下载排行</div>
+          <div class="keep-rank" ng-class="{active: vm.activeTab == 2}" ng-click="vm.activeTab = 2">收藏排行</div>
+        </div>
+        <div class="rank-con">
+          <div class="rank-list" ng-show="vm.activeTab == 1 || vm.activeTab == 2"
+               ng-repeat=" list in gameList | orderBy: [vm.activeTab == 1 ? 'downloadNum':'collectionNum', 'name']:true">
+            <a ng-href="#/applycontent/{{list.id}}/">
+              <div class="rank-list-left fl"><img ng-src="{{list.img}}" alt=""></div>
+              <div class="rank-list-center fl">
+                <div class="rank-num fl">{{($index+1)<10 ? '0'+($index+1) : ($index+1)}}</div>
+                <div class="rank-name fl">{{list.name}}</div>
+                <div class="rank-tims">下载数：{{vm.activeTab == 1 ? list.downloadNum : list.collectionNum}}</div>
+              </div>
+              <div class="rank-list-right fl">
+                <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'windows'"
+                     src="assets/images/style4.png" alt="">
+                <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'iphone'"
+                     src="assets/images/style2.png" alt="">
+                <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'android'"
+                     src="assets/images/style1.png" alt="">
+                <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
+                     alt="">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="rank-con2">
+          <img src="assets/images/buy.png" alt="">
+          <button><a href="javascript:void(0)">现在购买</a></button>
+        </div>
+        <div class="rank-con3">
+          <button><img src="assets/images/file.png" alt="">提交您的软件</button>
+          <input type="file">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 主体页面结束 -->
+

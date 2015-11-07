@@ -1,0 +1,80 @@
+<!-- 主体页面开始 -->
+<div class="apply-content">
+  <div class="div-c apply">
+    <!-- 内容一 -->
+    <div class="apply-content1">
+      <div class="apply-content1-l fl">
+        <img ng-src="{{findOne.img}}" alt="">
+      </div>
+      <div class="apply-content1-c fl">
+        <div class="company-name">{{findOne.companyName}}</div>
+        <div class="company-topic">{{findOne.name}}</div>
+        <div class="company-style">分类：{{findOne.type}} | 应用平台
+          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png" alt=""  >
+          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png" alt=""  >
+          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png" alt=""  >
+          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png" alt=""  ></div>
+        <div class="company-star fl">
+          <div class="star-part">
+            <span ng-style="{'width':'{{findOne.star_live * 20}}'+'%'}" class="star-on"></span>
+            <span class="star-off"></span>
+          </div>
+        </div>
+      </div>
+      <div class="apply-content1-r fl">
+        <button><a href="{{findOne.downloadUrl}}" target="_blank">直接下载</a></button>
+      </div>
+      <div class="apply-content1-p"><a href="javascript:void(0)">查看详细<img src="assets/images/arrow-down.png" alt=""></a></div>
+    </div>
+
+
+    <!-- 内容二 -->
+    <div class="apply-content2">
+      <div class="apply-content-tit">软件屏幕截图</div>
+      <div class="apply-content2-con" style="padding: 0;">
+        <!-- 轮播 -->
+        <div>
+          <carousel interval="myInterval" no-wrap="noWrapSlides">
+            <slide ng-repeat="slide in findOne.Screenshot" active="slide.active">
+              <img ng-src="{{slide.img}}" style="margin:auto;">
+              <!--<div class="carousel-caption">-->
+                <!--<h4>Slide {{$index}}</h4>-->
+                <!--<p>{{slide.text}}</p>-->
+              <!--</div>-->
+            </slide>
+          </carousel>
+        </div>
+        <!-- 轮播 -->
+      </div>
+    </div>
+    <div class="apply-content3">
+      <div class="apply-content-tit">应用介绍</div>
+      <div class="apply-content3-con">
+        <p ng-repeat="Introduction in findOne.applyIntroduction">
+          {{Introduction.title}}
+          <span ng-repeat="child in Introduction.child" style="display: block;">{{child}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="apply3-l-bottom apply-search-bottom">
+      <div class="apply3-lb-tit">
+        <div class="fl">相关应用</div>
+      </div>
+      <div class="apply3-lb-con">
+        <div class="apply3-list-new" ng-repeat="relevant in findOne.relevantApply">
+          <div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}" alt=""></a></div>
+          <div class="apply3-new-txt1"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt1}}</a></div>
+          <div class="apply3-new-txt2"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt2}}</a></div>
+          <div class="apply3-new-style">
+            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png" alt=""  >
+            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png" alt=""  >
+            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png" alt=""  >
+            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png" alt=""  >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 主体页面结束 -->
