@@ -10,21 +10,23 @@
     .controller('ApplycontentController', ApplycontentController);
 
   /** @ngInject */
-  function ApplycontentController($scope, CONFIGS ,$stateParams) {
+  function ApplycontentController($scope, CONFIGS ,$stateParams, findByone) {
     var gameId = $stateParams.id;
     var vm = $scope.vm = {};
-
     $scope.myInterval = 5000;
 
+    // 真数据
+    findByone.find_one(gameId).then(function (data) {
+      console.log(data);
+    }).catch(function(err) {
+      console.log(err);
+    });
+
+    // 模拟数据
     for (var i = 0; i < CONFIGS.gameList.length; i++) {
       if (CONFIGS.gameList[i].id === parseInt(gameId, 10)) {
-        console.log(CONFIGS.gameList[i]);
         $scope.findOne = CONFIGS.gameList[i];
       }
     }
-
-
-    // $scope.gameList = CONFIGS.gameList;
-    // $scope.newEst = CONFIGS.newEst;
   }
 })();

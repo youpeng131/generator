@@ -3,23 +3,27 @@
 
   angular
     .module('angularApp')
-    .factory('githubContributor', githubContributor)
+    .factory('findAll', findAll)
     .factory('userLogin', userLogin)
-    .factory('userRegiste', userRegiste);
+    .factory('userRegiste', userRegiste)
+    .factory('findByone', findByone)
+    .factory('findSearch', findSearch);
 
 
   /** @ngInject */
-  function githubContributor($log, $http) {
-    var apiHost = 'https://api.github.com/repos/Swiip/generator-gulp-angular';
+
+
+  // 查询所有
+
+  function findAll($log, $http, apiHost) {
 
     var service = {
-      apiHost: apiHost,
-      getContributors: getContributors
+      find: find
     };
 
     return service;
 
-    function getContributors(limit) {
+    function find(limit) {
       if (!limit) {
         limit = 30;
       }
@@ -39,6 +43,57 @@
   }
 
 
+  // 查询一个
+  function findByone($log, $http, apiHost) {
+    var service = {
+      find_one: find_one
+    };
+    return service;
+
+    function find_one(id) {
+      console.log(id);
+      return $http.get(apiHost + '/findOne/' + id + '/')
+        .then(getContributorsComplete)
+        .catch(getContributorsFailed);
+
+      function getContributorsComplete(response) {
+        return response.data;
+      }
+
+      function getContributorsFailed(error) {
+        $log.error('XHR Failed for getContributors.\n' + angular.toJson(error.data, true));
+      }
+    }
+  }
+
+
+  // 搜索匹配
+
+  function findSearch($log, $http, apiHost) {
+    var service = {
+      find: find
+    };
+    return service;
+
+    function find(name) {
+      console.log(name);
+      return $http.get(apiHost + '/findOne/' + name + '/')
+        .then(getContributorsComplete)
+        .catch(getContributorsFailed);
+
+      function getContributorsComplete(response) {
+        return response.data;
+      }
+
+      function getContributorsFailed(error) {
+        $log.error('XHR Failed for getContributors.\n' + angular.toJson(error.data, true));
+      }
+    }
+  }
+
+
+
+  // 登录
   function userLogin($log, $http, apiHost) {
     var service = {
       signIn: signIn
@@ -61,6 +116,7 @@
     }
   }
 
+  // 注册
   function userRegiste($log, $http, apiHost) {
     var service = {
       registe: registe

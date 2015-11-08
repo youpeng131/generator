@@ -9,8 +9,18 @@
     .controller('ApplyController', ApplyController);
 
   /** @ngInject */
-  function ApplyController($scope, CONFIGS, $state) {
+  function ApplyController($scope, CONFIGS, $state, findAll) {
     var vm = $scope.vm = {};
+    var limit = 10;
+
+    // 真数据
+    findAll.find(limit).then(function (data) {
+      console.log(data);
+    }).catch(function(err) {
+      console.log(err);
+    });
+
+    // 假数据
     $scope.gameList = CONFIGS.gameList;
     $scope.newEst = CONFIGS.newEst;
 
