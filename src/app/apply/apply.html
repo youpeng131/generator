@@ -80,9 +80,10 @@
             <a ng-href="#/applycontent/{{list.id}}/">
               <div class="rank-list-left fl"><img ng-src="{{list.img}}" alt=""></div>
               <div class="rank-list-center fl">
-                <div class="rank-num fl">{{($index+1)<10 ? '0'+($index+1) : ($index+1)}}</div>
+                <div class="rank-num fl">{{$index+1}}</div>
+                <!--<div class="rank-num fl">{{($index+1)<10 ? '0'+($index+1)+'' : ''+($index+1)+''}}</div>-->
                 <div class="rank-name fl">{{list.name}}</div>
-                <div class="rank-tims">下载数：{{vm.activeTab == 1 ? list.downloadNum : list.collectionNum}}</div>
+                <div class="rank-tims">{{vm.activeTab == 1 ? '下载' : '收藏'}}数：{{vm.activeTab == 1 ? list.downloadNum : list.collectionNum}}</div>
               </div>
               <div class="rank-list-right fl">
                 <img ng-repeat="platForm in list.plat_form" ng-show="platForm == 'windows'"
