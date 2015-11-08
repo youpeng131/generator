@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -17,7 +17,7 @@
             userLogin.signIn(vm).then(function (data) {
               console.log(data);
               $state.go('apply');
-            }).catch(function(err) {
+            }).catch(function (err) {
               console.log(err);
             });
           }

@@ -2,7 +2,7 @@
  * Created by youpeng on 15/11/7.
  */
 
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -17,7 +17,7 @@
     // 真数据
     findSearch.find(key).then(function (data) {
       console.log(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
     });
 

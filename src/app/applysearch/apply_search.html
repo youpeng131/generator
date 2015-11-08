@@ -4,6 +4,7 @@
     <div class="apply-search-top">
       <div class="apply3-list" ng-repeat="res in searchResult">
         <a ng-href="#/applycontent/{{res.id}}/"><img ng-src="{{res.img}}" alt="" class="apply-img"></a>
+
         <div class="apply3-list-bottom">
           <div class="apply-list-tit"><a ng-href="#/applycontent/{{res.id}}/">{{res.name}}</a></div>
           <div class="apply-list-con">
@@ -14,10 +15,14 @@
               </div>
             </div>
             <div class="style fr">
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png" alt=""  >
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png" alt=""  >
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png" alt=""  >
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png" alt=""  >
+              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png"
+                   alt="">
+              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png"
+                   alt="">
+              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png"
+                   alt="">
+              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
+                   alt="">
             </div>
           </div>
         </div>
@@ -32,17 +37,22 @@
       </div>
       <div class="apply3-lb-con">
         <div ng-repeat="res in searchResult">
-        <div class="apply3-list-new" ng-repeat="relevant in res.relevantApply">
-            <div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}" alt=""></a></div>
+          <div class="apply3-list-new" ng-repeat="relevant in res.relevantApply">
+            <div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}"
+                                                                                          alt=""></a></div>
             <div class="apply3-new-txt1"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt1}}</a></div>
             <div class="apply3-new-txt2"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt2}}</a></div>
             <div class="apply3-new-style">
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png" alt=""  >
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png" alt=""  >
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png" alt=""  >
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png" alt=""  >
+              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'"
+                   src="assets/images/style4.png" alt="">
+              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'"
+                   src="assets/images/style2.png" alt="">
+              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'"
+                   src="assets/images/style1.png" alt="">
+              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'"
+                   src="assets/images/style3.png" alt="">
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>

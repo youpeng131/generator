@@ -2,7 +2,7 @@
  * Created by youpeng on 15/11/7.
  */
 
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -10,7 +10,7 @@
     .controller('ApplycontentController', ApplycontentController);
 
   /** @ngInject */
-  function ApplycontentController($scope, CONFIGS ,$stateParams, findByone) {
+  function ApplycontentController($scope, CONFIGS, $stateParams, findByone) {
     var gameId = $stateParams.id;
     var vm = $scope.vm = {};
     $scope.myInterval = 5000;
@@ -18,7 +18,7 @@
     // 真数据
     findByone.find_one(gameId).then(function (data) {
       console.log(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
     });
 

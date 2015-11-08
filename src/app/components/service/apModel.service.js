@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -90,7 +90,6 @@
       }
     }
   }
-
 
 
   // 登录

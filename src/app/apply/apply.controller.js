@@ -1,7 +1,7 @@
 /**
  * Created by youpeng on 15/11/7.
  */
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -16,7 +16,7 @@
     // 真数据
     findAll.find(limit).then(function (data) {
       console.log(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
     });
 
@@ -24,8 +24,8 @@
     $scope.gameList = CONFIGS.gameList;
     $scope.newEst = CONFIGS.newEst;
 
-    $scope.search = function(key) {
-      $state.go('applysearch',{key: key});
+    $scope.search = function (key) {
+      $state.go('applysearch', {key: key});
     }
   }
 })();

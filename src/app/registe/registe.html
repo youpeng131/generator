@@ -7,7 +7,8 @@
       <div class="registe-con">
         <div class="registe-div">
           <div class="registe-l">电子邮箱</div>
-          <div class="registe-r"><input type="text" placeholder="请输入您的常用邮箱" name="email" ng-model="vm.email" ng-pattern="/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/" required></div>
+          <div class="registe-r"><input type="text" placeholder="请输入您的常用邮箱" name="email" ng-model="vm.email"
+                                        ng-pattern="/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/" required></div>
         </div>
         <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.email.$invalid">
           <span ng-style="{'color':'red'}"
@@ -17,25 +18,31 @@
         </div>
         <div class="registe-div">
           <div class="registe-l">昵称</div>
-          <div class="registe-r"><input type="text" placeholder="个性名称" name="nickname" ng-model="vm.nickname" required></div>
+          <div class="registe-r"><input type="text" placeholder="个性名称" name="nickname" ng-model="vm.nickname" required>
+          </div>
         </div>
-        <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.nickname.$invalid">
+        <div class="registe-div" style="margin-left: 115px;"
+             ng-show="myForm.$submitted==true && myForm.nickname.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.nickname.$error.required && myForm.$submitted==true">昵称不能为空</span>
         </div>
         <div class="registe-div">
           <div class="registe-l">密码</div>
-          <div class="registe-r"><input type="password" placeholder="字母数字组成" name="password" ng-model="vm.password"  required></div>
+          <div class="registe-r"><input type="password" placeholder="字母数字组成" name="password" ng-model="vm.password"
+                                        required></div>
         </div>
-        <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.password.$invalid">
+        <div class="registe-div" style="margin-left: 115px;"
+             ng-show="myForm.$submitted==true && myForm.password.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.password.$error.required && myForm.$submitted==true">密码不能为空</span>
         </div>
         <div class="registe-div">
           <div class="registe-l">手机号</div>
-          <div class="registe-r"><input type="text" placeholder="您的手机号码" name="mobile" ng-model="vm.mobile" ng-pattern="/^(1[345789][\d])[0-9]{8}$/" required></div>
+          <div class="registe-r"><input type="text" placeholder="您的手机号码" name="mobile" ng-model="vm.mobile"
+                                        ng-pattern="/^(1[345789][\d])[0-9]{8}$/" required></div>
         </div>
-        <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.mobile.$invalid">
+        <div class="registe-div" style="margin-left: 115px;"
+             ng-show="myForm.$submitted==true && myForm.mobile.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.mobile.$error.required && myForm.$submitted==true">手机号码不能为空</span>
           <span ng-style="{'color':'red'}"
@@ -54,9 +61,11 @@
                 ng-show="myForm.code.$error.required && myForm.$submitted==true">验证码不能为空</span>
         </div>
         <div class="registe-div reg-ensure">
-          <input type="checkbox" name="is_active" ng-checked="vm.is_active" ng-init="vm.is_active = true" ng-model="vm.is_active"  required> 同意注册VRSEEN服务条款
+          <input type="checkbox" name="is_active" ng-checked="vm.is_active" ng-init="vm.is_active = true"
+                 ng-model="vm.is_active" required> 同意注册VRSEEN服务条款
         </div>
-        <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.is_active.$invalid">
+        <div class="registe-div" style="margin-left: 115px;"
+             ng-show="myForm.$submitted==true && myForm.is_active.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.is_active.$error.required && myForm.$submitted==true">注册需同意服务条款</span>
         </div>

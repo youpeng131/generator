@@ -1,7 +1,7 @@
 /**
  * Created by youpeng on 15/11/7.
  */
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -22,17 +22,17 @@
             userRegiste.registe(vm).then(function (data) {
               console.log(data);
               $state.go('apply');
-            }).catch(function(err) {
+            }).catch(function (err) {
               console.log(err);
             });
           }
         },
-        getYzm: function() {
+        getYzm: function () {
           var seconds = 60;
           var timer;
-          var  clock = function() {
+          var clock = function () {
             seconds--;
-            $scope.yzm = ''+seconds+'秒后重新获取';
+            $scope.yzm = '' + seconds + '秒后重新获取';
             $scope.isAbled = true;
             if (seconds === 0) {
               clearInterval(timer);
@@ -40,7 +40,7 @@
               $scope.isAbled = false;
             }
           };
-          timer = setInterval(function(){
+          timer = setInterval(function () {
             $scope.$apply(clock);
           }, 1000);
         }
