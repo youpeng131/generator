@@ -3,7 +3,8 @@
 
   angular
     .module('angularApp')
-    .directive('acmeMalarkey', acmeMalarkey);
+    .directive('acmeMalarkey', acmeMalarkey)
+    .directive('myCarousel', myCarousel);
 
   /** @ngInject */
   function acmeMalarkey(malarkey) {
@@ -71,5 +72,40 @@
     }
 
   }
+
+
+  function myCarousel() {
+    return {
+      restrict: 'AE',
+      link: function (scope, element) {
+        if (scope.$last === true) {
+          var oDiv = angular.element(document.querySelector('.picScroll'));
+          var oUl = oDiv[0].children[0];
+          var aLi = oUl.children;
+          var aLeft = oDiv[0].children[1];
+          var aRight = oDiv[0].children[2];
+          var iNow = 0;
+          oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+          aLeft.onclick = function() {
+            iNow--;
+            if (iNow < 0) {
+              iNow = aLi.length - (oDiv[0].clientWidth / aLi[0].clientWidth);
+            }
+            oUl.style.left=-iNow*aLi[0].clientWidth+'px';
+          };
+          aRight.onclick = function() {
+            iNow++;
+            if (iNow > aLi.length - (oDiv[0].clientWidth / aLi[0].clientWidth)) {
+              iNow = 0;
+            }
+            oUl.style.left=-iNow*aLi[0].clientWidth+'px';
+          }
+        }
+
+
+      }
+    };
+  }
+
 
 })();

@@ -236,7 +236,8 @@ input {
   height: 40px;
   line-height: 40px;
   clear: both;
-  padding: 7px 0px;
+  /*padding: 7px 0px;*/
+  margin-bottom: 15px;
 }
 
 .registe-div .registe-l {
@@ -245,6 +246,8 @@ input {
   width: 115px;
   padding-right: 20px;
   text-align: right;
+  font-family: "黑体";
+  color: #6b6a6a;
 }
 
 .registe-div .registe-r {
@@ -256,7 +259,8 @@ input {
   width: 260px;
   border: 1px solid #C1C1C1;
   height: 40px;
-  line-height: 40px \0
+  line-height: 40px \0;
+  font-size: 12px;
 }
 
 .reg-modify input {
@@ -306,8 +310,8 @@ input {
 }
 
 .login_wrap {
-  width: 253px;
-  height: 360px;
+  width: 313px;
+  height: 477px;
   background: url(../assets/images/login_form_bg.png) no-repeat 0 0;
   top: 120px;
   right: 0;
@@ -317,27 +321,27 @@ input {
 
 .login_wrap .login_item {
   position: relative;
-  height: 44px;
+  height: 54px;
   padding: 5px;
-  width: 233px;
+  width: 243px;
   background: url(../assets/images/login_txt.png) no-repeat 0 0;
   margin: 0 auto 8px;
 }
 
 .login_item_identify {
-  width: 120px !important;
+  width: 130px !important;
   margin-left: 8px !important;
   background-size: 100% 100% !important;
 }
 
 .login_item_identify input {
-  width: 78px !important;
+  width: 130px !important;
 }
 
 .login_item input {
   height: 44px;
   line-height: 44px \0;
-  width: 188px;
+  width: 224px;
   padding-left: 45px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0);
@@ -409,6 +413,7 @@ input {
   background: #CCCCCC;
   margin-right: 10px;
   padding-left: 5px;
+  line-height: 32px;
   line-height: 32px \0;
 }
 
@@ -558,7 +563,11 @@ input {
 .rank-name {
   font-size: 16px;
   font-weight: bold;
-  color: #696969
+  color: #696969;
+  width: 85px;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
 }
 
 .rank-list-right img {
@@ -694,7 +703,15 @@ input {
   margin-right: 40px;
   margin-left: 0;
 }
-
+.apply-search .applay-search-head h3{
+  font-size: 18px;
+  color: #696969;
+  padding-left: 120px;
+  background: url(../assets/images/back.png) no-repeat 0 center;
+  height: 80px;
+  line-height: 80px;
+  font-weight: normal;
+}
 .apply-search .apply3-list:nth-child(4n) {
   margin-right: 0;
 }
@@ -706,6 +723,7 @@ input {
 .apply-search-top {
   padding-bottom: 500px;
   overflow: hidden;
+  margin-top: -20px;
 }
 
 .apply-search-bottom .apply3-lb-con {

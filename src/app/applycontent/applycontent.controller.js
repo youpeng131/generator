@@ -13,7 +13,6 @@
   function ApplycontentController($scope, CONFIGS, $stateParams, findByone) {
     var gameId = $stateParams.id;
     var vm = $scope.vm = {};
-    $scope.myInterval = 5000;
 
     // 真数据
     findByone.find_one(gameId).then(function (data) {

@@ -10,9 +10,13 @@
     .controller('ApplySearchController', ApplySearchController);
 
   /** @ngInject */
-  function ApplySearchController($scope, CONFIGS, $stateParams, findSearch) {
+  function ApplySearchController($scope, CONFIGS, $stateParams, findSearch, $state) {
     var key = $stateParams.key;
     var vm = $scope.vm = {};
+
+    $scope.back = function() {
+      $state.go('apply');
+    };
 
     // 真数据
     findSearch.find(key).then(function (data) {
@@ -20,6 +24,7 @@
     }).catch(function (err) {
       console.log(err);
     });
+
 
     // 模拟数据
     var searchResult = [];

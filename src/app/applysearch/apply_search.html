@@ -1,6 +1,9 @@
 <!-- 主体页面开始 -->
 <div class="apply-search">
   <div class="div-c apply">
+    <div class="applay-search-head">
+        <h3 ng-click="back()">共找到  {{searchResult.length}} 条相关信息</h3>
+    </div>
     <div class="apply-search-top">
       <div class="apply3-list" ng-repeat="res in searchResult">
         <a ng-href="#/applycontent/{{res.id}}/"><img ng-src="{{res.img}}" alt="" class="apply-img"></a>
@@ -26,9 +29,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div ng-show="!searchResult.length" class="text-center" style="padding: 40px;">
-        无搜索结果
       </div>
     </div>
     <div class="apply3-l-bottom apply-search-bottom">

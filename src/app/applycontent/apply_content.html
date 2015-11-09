@@ -38,17 +38,14 @@
       <div class="apply-content-tit">软件屏幕截图</div>
       <div class="apply-content2-con" style="padding: 0;">
         <!-- 轮播 -->
-        <div>
-          <carousel interval="myInterval" no-wrap="noWrapSlides">
-            <slide ng-repeat="slide in findOne.Screenshot" active="slide.active">
-              <img ng-src="{{slide.img}}" style="margin:auto;">
-              <!--<div class="carousel-caption">-->
-              <!--<h4>Slide {{$index}}</h4>-->
-              <!--<p>{{slide.text}}</p>-->
-              <!--</div>-->
-            </slide>
-          </carousel>
+        <div class="picScroll">
+          <ul>
+            <li ng-repeat="slide in findOne.Screenshot" my-carousel><a  target="_blank" href="http://www.superslide2.com/"><img ng-src="{{slide.img}}"/>{{$index}}</a></li>
+          </ul>
+          <a class="prev" href="javascript:void(0)"><img src="assets/images/arrow-left.png" alt=""></a>
+          <a class="next" href="javascript:void(0)"><img src="assets/images/arrow-right.png" alt=""></a>
         </div>
+
         <!-- 轮播 -->
       </div>
     </div>
