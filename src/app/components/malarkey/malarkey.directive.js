@@ -80,7 +80,7 @@
       link: function (scope, element) {
         if (scope.$last === true) {
           var oDiv = angular.element(document.querySelector('.picScroll'));
-          var oUl = oDiv[0].children[0];
+          var oUl = oDiv[0].children[0].children[0];
           var aLi = oUl.children;
           var aLeft = oDiv[0].children[1];
           var aRight = oDiv[0].children[2];
@@ -101,8 +101,6 @@
             oUl.style.left=-iNow*aLi[0].clientWidth+'px';
           }
         }
-
-
       }
     };
   }

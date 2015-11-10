@@ -827,6 +827,7 @@ input {
   border-radius: 2px;
   background: #fff;
   padding: 40px 0px;
+  position: relative;
 }
 
 /*轮播css*/
@@ -836,7 +837,6 @@ input {
   position: relative;
   margin: 0 auto;
 }
-
 .picScroll .prev, .picScroll .next {
   width: 42px;
   height: 42px;
@@ -860,10 +860,10 @@ input {
 }
 
 .picScroll ul li {
-  width: 226px;
+  width: 246px;
   float: left;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .picScroll ul li img {
@@ -871,10 +871,11 @@ input {
   width: 226px;
   display: block;
 }
-
 .tempWrap {
   position: relative;
-  left: 56px;
+  left: 42px;
+  width: 738px;
+  overflow: hidden;
 }
 
 /*轮播css*/

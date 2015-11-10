@@ -73,7 +73,13 @@
           'companyName': '腾讯网络技术有限公司',
           'type': '游戏',
           'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
+          'Screenshot': [
+            {'img': 'assets/images/shot-screen.png'},
+            {'img': 'assets/images/shot-screen.png'},
+            {'img': 'assets/images/shot-screen.png'},
+            {'img': 'assets/images/shot-screen.png'}
+
+          ],
           'applyIntroduction': [{
             'title': '【不一样的双12-新人专享】',
             'child': [
