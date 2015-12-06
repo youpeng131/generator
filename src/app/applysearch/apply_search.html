@@ -1,63 +1,72 @@
-<!-- 主体页面开始 -->
-<div class="apply-search">
-  <div class="div-c apply">
-    <div class="applay-search-head">
-        <h3 ng-click="back()">共找到  {{searchResult.length}} 条相关信息</h3>
-    </div>
-    <div class="apply-search-top">
-      <div class="apply3-list" ng-repeat="res in searchResult">
-        <a ng-href="#/applycontent/{{res.id}}/"><img ng-src="{{res.img}}" alt="" class="apply-img"></a>
 
+<div class="apply-search">
+  <div class="search-info div-c">
+            <a ng-href="#/"><span>
+                <img src="assets/images/back-icon.png" alt="">
+                <span class="blue-txt">返回</span>
+            </span>
+            </a>
+            <span>
+                <span class="gray-txt">共找到</span>
+                <span class="red-txt">{{searchResult.length ? searchResult.length : 0 }}</span>
+                <span class="gray-txt">条相关信息</span>
+            </span>
+  </div>
+  <div class="div-c apply">
+    <div class="apply-search-top">
+      <div class="apply3-list" ng-repeat="list in searchResult">
+        <a ng-href="#/applycontent/{{list.id}}/"><img ng-src="{{list.image}}" alt="" class="apply-img"></a>
         <div class="apply3-list-bottom">
-          <div class="apply-list-tit"><a ng-href="#/applycontent/{{res.id}}/">{{res.name}}</a></div>
+          <div class="apply-list-tit">
+            <a ng-href="#/applycontent/{{list.id}}/" class="fl">{{list.name}}</a>
+            <div class="style fr">
+              <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+            </div>
+          </div>
           <div class="apply-list-con">
-            <div class="star fl">
-              <div class="star-part">
-                <span ng-style="{'width':'{{findOne.star_live * 20}}'+'%'}" class="star-on"></span>
+            <div class="apply-list-tip">
+              {{list.max_version.summary}}
+            </div>
+            <div class="star">
+              <div class="star-part fl">
+                <span ng-style="{'width':'{{list.avg_score * 20}}'+'%'}" class="star-on"></span>
                 <span class="star-off"></span>
               </div>
+              <div class="star-score fr">{{list.avg_score}}分</div>
             </div>
-            <div class="style fr">
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png"
-                   alt="">
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png"
-                   alt="">
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png"
-                   alt="">
-              <img ng-repeat="platForm in res.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
-                   alt="">
-            </div>
+          </div>
+          <div class="apply-list-download">
+            <button>下载</button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="apply3-l-bottom apply-search-bottom">
-      <div class="apply3-lb-tit">
-        <div class="fl">相关应用</div>
-      </div>
-      <div class="apply3-lb-con">
-        <div ng-repeat="res in searchResult">
-          <div class="apply3-list-new" ng-repeat="relevant in res.relevantApply">
-            <div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}"
-                                                                                          alt=""></a></div>
-            <div class="apply3-new-txt1"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt1}}</a></div>
-            <div class="apply3-new-txt2"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt2}}</a></div>
-            <div class="apply3-new-style">
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'"
-                   src="assets/images/style4.png" alt="">
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'"
-                   src="assets/images/style2.png" alt="">
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'"
-                   src="assets/images/style1.png" alt="">
-              <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'"
-                   src="assets/images/style3.png" alt="">
-            </div>
-          </div>
+
+
+      <!-- 分页部分 -->
+      <div class="fenye">
+        <ul class="page">
+          <li class="first-page"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></li>
+          <li><a href="javascript:void(0);">1</a></li>
+          <li><a href="javascript:void(0);">2</a></li>
+          <li><a href="javascript:void(0);">3</a></li>
+          <li><a href="javascript:void(0);">4</a></li>
+          <li><a href="javascript:void(0);">5</a></li>
+          <li class="page-dot">...</li>
+          <li class="last-page"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></li>
+        </ul>
+        <div class="topage">
+          共100页，到第
+                            <span class="topage-span">
+                                <input type="text" value="1">
+                                <img src="assets/images/up.png" alt="" class="up">
+                                <img src="assets/images/down.png" alt="" class="down">
+                            </span>
+          页
+          <button class="make-sure">确定</button>
         </div>
       </div>
+      <!-- 分页部分 -->
     </div>
+
   </div>
 </div>
-
-<!-- 主体页面结束 -->
-

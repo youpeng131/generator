@@ -1,12 +1,52 @@
-<!-- 头部 -->
-<div class="header">
-  <div class="div-c">
-    <a href="javascript:void(0)"><img src="assets/images/logo.png" alt="" class="fl"></a>
-    <ul>
-      <li><a ng-href="#/">产品</a></li>
-      <li><a ng-href="#/apply">应用</a></li>
-      <li><a ng-href="#/applycontent/{{1}}/">开发和分享</a></li>
-      <li><a ng-href="#/registe">加入唯见</a></li>
-    </ul>
+
+<div class="header index-header">
+  <div class="header-top">
+    <div class="div-c">
+      <div class="fl txtff4400 head-l">最大最全的虚拟现实应用商店</div>
+      <div class="fr head-r">
+        <div class="fl">
+          <a ng-href="#/registe">注册</a> | <a ng-href="#/login">登陆</a>
+        </div>
+        <div class="fl">
+          <a href="javascript:void(0);"><img src="assets/images/language.png" alt=""> English </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-center" ng-show="isIndex">
+    <img ng-src="{{UserMainPageTopImage}}" alt="" width="100%">
+  </div>
+  <div class="header-bottom">
+    <div class="div-c">
+      <div class="search-block">
+        <div class="head-bl fl">
+          <a ng-href="#/"><img src="assets/images/logo.png" alt="" class="fl logo"></a>
+        </div>
+        <div class="head-br fl">
+          <ul>
+            <li class="li-now">全部</li>
+            <li>安卓平台</li>
+            <li>苹果平台</li>
+            <li>mac平台</li>
+          </ul>
+          <div class="search">
+            <input type="text" placeholder="星球探险家" ng-model="vm.searchName">
+            <button ng-click="Handel.searchApp(vm.searchName)">搜索</button>
+          </div>
+          <div class="fl search-a">
+            <a href="javascript:void(0);" class="font-red">星球探险家</a>
+            <a href="javascript:void(0);">星球探险家</a>
+            <a href="javascript:void(0);" class="font-red">星球探险家</a>
+            <a href="javascript:void(0);">星球探险家</a>
+            <a href="javascript:void(0);">星球探险家</a>
+            <a href="javascript:void(0);">星球探险家</a>
+            <a href="javascript:void(0);">星球探险家</a>
+          </div>
+          <div class="fr more-btn"><a href="javascript:void(0)">更多&gt;</a></div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>

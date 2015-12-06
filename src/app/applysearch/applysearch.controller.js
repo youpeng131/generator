@@ -10,30 +10,39 @@
     .controller('ApplySearchController', ApplySearchController);
 
   /** @ngInject */
-  function ApplySearchController($scope, CONFIGS, $stateParams, findSearch, $state) {
+  function ApplySearchController($scope, $stateParams, APP, searchApps, $state) {
     var key = $stateParams.key;
     var vm = $scope.vm = {};
 
-    $scope.back = function() {
-      $state.go('apply');
-    };
+    /**************************正式环境**********************/
 
-    // 真数据
-    findSearch.find(key).then(function (data) {
-      console.log(data);
+    // 查询searchApps  @地址 'app/components/service/apModel.service.js' @方法 searchApps
+    var page = 10;
+    searchApps.find(key, page).then(function (res) {
+      console.log(res);
+      var searchResult = [];
+      angular.forEach(res.apps.data, function(val) {
+        if (val.name.indexOf(key) !== -1) {
+          searchResult.push(val);
+        }
+      });
+      $scope.searchResult = searchResult;
+
     }).catch(function (err) {
       console.log(err);
     });
 
+    /**************************测试环境**********************/
 
-    // 模拟数据
+    // 搜索
     var searchResult = [];
-    for (var i = 0; i < CONFIGS.gameList.length; i++) {
-      if (CONFIGS.gameList[i].name.indexOf(key) !== -1) {
-        searchResult.push(CONFIGS.gameList[i]);
+    angular.forEach(APP.apps.data, function(val) {
+      if (val.name.indexOf(key) !== -1) {
+        searchResult.push(val);
       }
-    }
+    });
     $scope.searchResult = searchResult;
+
   }
 })();
 

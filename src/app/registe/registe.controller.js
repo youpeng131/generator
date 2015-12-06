@@ -11,6 +11,8 @@
   /** @ngInject */
   function RegisteController($scope, $http, $state, userRegiste) {
     var vm = $scope.vm = {};
+    var data = $scope.data = {};
+
     $scope.yzm = '验证码';
     $scope.isAbled = false;
     angular.extend($scope, $http, {
@@ -19,9 +21,12 @@
           if (form.$valid === false) {
             return false;
           } else {
-            userRegiste.registe(vm).then(function (data) {
-              console.log(data);
-              $state.go('apply');
+            if (vm.activeTab === 1) {
+              $scope.send_success = true;
+            }
+            console.log(data);
+            userRegiste.registe(data).then(function (res) {
+              console.log(res);
             }).catch(function (err) {
               console.log(err);
             });

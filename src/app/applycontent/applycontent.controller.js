@@ -10,22 +10,35 @@
     .controller('ApplycontentController', ApplycontentController);
 
   /** @ngInject */
-  function ApplycontentController($scope, CONFIGS, $stateParams, findByone) {
-    var gameId = $stateParams.id;
+  function ApplycontentController($scope, APP, DETAIL, $stateParams, findByone) {
+    var AppId = parseInt($stateParams.id, 10);
     var vm = $scope.vm = {};
 
-    // 真数据
-    findByone.find_one(gameId).then(function (data) {
-      console.log(data);
+
+    /**************************正式环境**********************/
+
+    //查询findByone  @地址 'app/components/service/apModel.service.js' @方法 findByone
+
+    findByone.find_one(AppId).then(function (res) {
+      console.log(res);
+      $scope.detail = res.app;
     }).catch(function (err) {
       console.log(err);
     });
 
-    // 模拟数据
-    for (var i = 0; i < CONFIGS.gameList.length; i++) {
-      if (CONFIGS.gameList[i].id === parseInt(gameId, 10)) {
-        $scope.findOne = CONFIGS.gameList[i];
-      }
+
+    /**************************测试环境**********************/
+
+    // 查询findOneById
+
+    if (DETAIL.app.id === AppId) {
+      $scope.detail = DETAIL.app;
     }
+
+    // 联想应用
+
+    $scope.findfootApps = APP.foot_apps.apps.data;
+
+
   }
 })();

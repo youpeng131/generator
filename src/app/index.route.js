@@ -13,10 +13,20 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController'
       })
-      .state('apply', {
-        url: '/apply',
-        templateUrl: 'app/apply/apply.html',
-        controller: 'ApplyController'
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginController'
+      })
+      .state('developlogin', {
+        url: '/develop_login',
+        templateUrl: 'app/developlogin/develop_login.html',
+        controller: 'DevelopLoginController'
+      })
+      .state('forgetpassword', {
+        url: '/forget_password',
+        templateUrl: 'app/forgetpassword/forget_password.html',
+        controller: 'ForgetPasswordController'
       })
       .state('applycontent', {
         url: '/applycontent/:id/',

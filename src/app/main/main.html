@@ -1,43 +1,234 @@
-<!-- 主体页面开始 -->
-<div class="login-bg">
-  <div class="container login_container">
-    <div class="login_wrap">
-      <form name="myForm" ng-submit="viewState.login(myForm)" novalidate>
-        <div class="login_item">
-          <input type="text" class="login_txt" placeholder="邮箱/手机号" name="username" ng-model="vm.username" required>
-          <img src="assets/images/login1.png" alt="">
+
+<!-- 主体页面结束 -->
+
+<div class="div-c clearfix">
+  <div class="g-banner">
+    <div class="g-banner-content">
+      <div class="banner-slide slide-active" style="display:block;background-image:url(../assets/images/ppt.png);background-size:cover;">
+        <a href="javascript:;" class="click-help"></a>
+        <!-- <div class="inner">
+          <h3 class="banner-tit"></h3>
+          <a href="javascript:void(0);" id="js-play-video" class="more">了解更多</a>
+        </div> -->
+      </div>
+      <div class="banner-slide" style="display:none;background-image:url(../assets/images/ppt.png);background-size:cover;">
+        <a href="javascript:;" class="click-help"></a>
+        <!-- <div class="inner">
+          <h3 class="banner-tit">万圣节恐怖show：吓哭慕女神的重任就交给你啦！</h3>
+        </div> -->
+      </div>
+    </div>
+    <div class="banner-dots">
+    </div>
+    <a href="javascript:;" class="banner-anchor prev">上一张</a>
+    <a href="javascript:;" class="banner-anchor next">下一张</a>
+  </div>
+
+  <div class="index2">
+    <div class="config2-l">
+      <div class="config2-l-tab">
+        <ul class="fl" ng-init="vm.activeTab=1">
+          <li  ng-class="{'config2-li-now': vm.activeTab == 1}" ng-click="vm.activeTab = 1">
+            <a href="javascript:void(0);" ng-click="activeTab(1)">下载量</a>
+          </li>
+          <li ng-class="{'config2-li-now': vm.activeTab == 2}" ng-click="vm.activeTab = 2">
+            <a href="javascript:void(0);" ng-click="activeTab(2)">用户评分</a>
+          </li>
+          <li ng-class="{'config2-li-now': vm.activeTab == 3}" ng-click="vm.activeTab = 3">
+            <a href="javascript:void(0);" ng-click="activeTab(3)">名称排序</a>
+          </li>
+          <li ng-class="{'config2-li-now': vm.activeTab == 4}" ng-click="vm.activeTab = 4">
+            <a href="javascript:void(0);" ng-click="activeTab(4)">上架时间</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 分页部分 -->
+      <div class="fenye fl">
+        <div class="first-page fl"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></div>
+        <ul class="page">
+          <li><a href="javascript:void(0);">1</a></li>
+          <li><a href="javascript:void(0);">2</a></li>
+          <li><a href="javascript:void(0);">3</a></li>
+          <li><a href="javascript:void(0);">4</a></li>
+          <li><a href="javascript:void(0);">5</a></li>
+        </ul>
+        <div class="page-dot fl">...</div>
+        <div class="last-page fl"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></div>
+        <div class="topage">
+          共100页，到第
+                            <span class="topage-span">
+                                <input type="text" value="1">
+                                <img src="assets/images/up.png" alt="" class="up">
+                                <img src="assets/images/down.png" alt="" class="down">
+                            </span>
+          页
+          <button class="make-sure">确定</button>
         </div>
-        <div ng-show="myForm.$submitted==true && myForm.username.$invalid">
-          <span ng-style="{'color':'red'}"
-                ng-show="myForm.username.$error.required && myForm.$submitted==true">用户名不能为空</span>
-        </div>
-        <div class="login_item">
-          <input type="text" class="login_txt" placeholder="密码" name="password" ng-model="vm.password" required>
-          <img src="assets/images/login2.png" alt="">
-        </div>
-        <div ng-show="myForm.$submitted==true && myForm.password.$invalid">
-          <span ng-style="{'color':'red'}"
-                ng-show="myForm.password.$error.required && myForm.$submitted==true">密码不能为空</span>
-        </div>
-        <div class="login_item login_item_identify">
-          <input type="text" class="login_txt2" placeholder="验证码" name="verification_code"
-                 ng-model="vm.verification_code" required>
-          <img src="assets/images/login3.png" alt="">
-        </div>
-        <div ng-show="myForm.$submitted==true && myForm.verification_code.$invalid">
-          <span ng-style="{'color':'red'}"
-                ng-show="myForm.verification_code.$error.required && myForm.$submitted==true">验证码不能为空</span>
-        </div>
-        <div class="login_item2">
-          <div class="rememberme fl">
-            <input type="checkbox" ng-checked="true">记住我
+      </div>
+      <!-- 分页部分 -->
+      <!-- <div class="config2-l-con">  -->
+      <div class="config2-l">
+        <ul class="index2-branch">
+          <li><a href="javascript:void(0);">下载量</a></li>
+          <li><a href="javascript:void(0);">IOS评分</a></li>
+          <li><a href="javascript:void(0);">Windows平台</a></li>
+          <li><a href="javascript:void(0);">Mac平台</a></li>
+          <li><a href="javascript:void(0);">全部</a></li>
+        </ul>
+        <div class="index-pro-list" ng-repeat="list in findHeadApps | orderBy: orderFilter :true">
+          <div class="index-list-info1">
+            <img ng-src="{{list.image}}" alt="">
           </div>
-          <div class="forgetpaw fr"><a href="javascript:void(0)">忘记密码？</a></div>
+          <div class="index-list-info2">
+            <div class="apply-list-tit">
+              <a ng-href="#/applycontent/{{list.id}}/" class="fl">{{list.name}}</a>
+            </div>
+            <div class="apply-list-con">
+              <div class="apply-list-tip">
+                {{list.max_version.summary}}
+              </div>
+              <div class="star">
+                <div class="star-part fl">
+                  <span ng-style="{'width':'{{list.avg_score * 20}}'+'%'}" class="star-on"></span>
+                  <span class="star-off"></span>
+                </div>
+                <div class="star-score fl">{{list.avg_score}}分</div>
+                <div class="index-style fr">
+                  <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="index-list-info3">
+            {{list.download_count}}次下载
+          </div>
+          <div class="index-list-info4">
+            <button>下载</button>
+          </div>
         </div>
-        <button class="login-btn" type="submit"><a href="javascript:void(0)">登陆</a></button>
-      </form>
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="config2-r">
+      <div class="check-div">
+        <div class="check-div-tit">综合分类</div>
+        <div class="check-div-con">
+          <ul>
+            <li ng-repeat="list in findAllApps.characters">
+              <input type="checkbox"  ng-model="chk" ng-click="Handel.characters(chk, list.id)">{{list.name}}
+            </li>
+            <!--<li>-->
+              <!--<input type="checkbox">全景照片-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">视频影视-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">动作冒险-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">休闲益智-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">教育-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">探索-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">恐怖-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">PRG-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">格斗射击-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<input type="checkbox">运动模拟-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+      <a href="javascript:void(0);">
+        <img src="assets/images/buy.png" alt="">
+      </a>
+      <a ng-href="#/develop_login">
+        <img src="assets/images/share.png" alt="">
+      </a>
     </div>
   </div>
 </div>
-<!-- 主体页面结束 -->
+<div class="header-center div-c" style="margin-bottom:20px;">
+  <img ng-src="{{UserMainPageMiddleImage}}" alt="" width="100%">
+</div>
+<div class="div-c index3">
+  <div class="config2-l-tab">
+    <ul class="fl" ng-init="vm.activeTab=5">
+      <li ng-class="{'config2-li-now': vm.activeTab == 5}"  >
+        <a href="javascript:void(0);" ng-click="vm.activeTab = 5">热门推荐</a>
+      </li>
+      <li ng-class="{'config2-li-now': vm.activeTab == 6}">
+        <a href="javascript:void(0);" ng-click="vm.activeTab = 6">近期热点</a>
+      </li>
+      <li ng-class="{'config2-li-now': vm.activeTab == 7}">
+        <a href="javascript:void(0);" ng-click="vm.activeTab = 7">最新上架</a>
+      </li>
+    </ul>
+  </div>
+  <div class="apply-search-top">
+    <div class="apply3-list" ng-repeat="list in findfootApps">
+      <a ng-href="#/applycontent/{{list.id}}/"><img ng-src="{{list.image}}" alt="" class="apply-img"></a>
+      <div class="apply3-list-bottom">
+        <div class="apply-list-tit">
+          <a ng-href="#/applycontent/{{list.id}}/" class="fl">{{list.name}}</a>
+          <div class="style fr">
+            <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+          </div>
+        </div>
+        <div class="apply-list-con">
+          <div class="apply-list-tip">
+            {{list.max_version.summary}}
+          </div>
+          <div class="star">
+            <div class="star-part fl">
+              <span ng-style="{'width':'{{list.avg_score * 20}}'+'%'}" class="star-on"></span>
+              <span class="star-off"></span>
+            </div>
+            <div class="star-score fr">{{list.avg_score}}分</div>
+          </div>
+        </div>
+        <div class="apply-list-download">
+          <button>下载</button>
+        </div>
+      </div>
+    </div>
 
+
+    <!-- 分页部分 -->
+    <div class="fenye">
+      <ul class="page">
+        <li class="first-page"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></li>
+        <li><a href="javascript:void(0);">1</a></li>
+        <li><a href="javascript:void(0);">2</a></li>
+        <li><a href="javascript:void(0);">3</a></li>
+        <li><a href="javascript:void(0);">4</a></li>
+        <li><a href="javascript:void(0);">5</a></li>
+        <li class="page-dot">...</li>
+        <li class="last-page"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></li>
+      </ul>
+      <div class="topage">
+        共100页，到第
+                            <span class="topage-span">
+                                <input type="text" value="1">
+                                <img src="assets/images/up.png" alt="" class="up">
+                                <img src="assets/images/down.png" alt="" class="down">
+                            </span>
+        页
+        <button class="make-sure">确定</button>
+      </div>
+    </div>
+    <!-- 分页部分 -->
+  </div>
+</div>

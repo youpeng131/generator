@@ -1,90 +1,316 @@
+<!--&lt;!&ndash; 主体页面开始 &ndash;&gt;-->
+<!--<div class="apply-content">-->
+  <!--<div class="div-c apply">-->
+    <!--&lt;!&ndash; 内容一 &ndash;&gt;-->
+    <!--<div class="apply-content1">-->
+      <!--<div class="apply-content1-l fl">-->
+        <!--<img ng-src="{{findOne.img}}" alt="">-->
+      <!--</div>-->
+      <!--<div class="apply-content1-c fl">-->
+        <!--<div class="company-name">{{findOne.companyName}}</div>-->
+        <!--<div class="company-topic">{{findOne.name}}</div>-->
+        <!--<div class="company-style">分类：{{findOne.type}} | 应用平台-->
+          <!--<img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png"-->
+               <!--alt="">-->
+          <!--<img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png"-->
+               <!--alt="">-->
+          <!--<img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png"-->
+               <!--alt="">-->
+          <!--<img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"-->
+               <!--alt=""></div>-->
+        <!--<div class="company-star fl">-->
+          <!--<div class="star-part">-->
+            <!--<span ng-style="{'width':'{{findOne.star_live * 20}}'+'%'}" class="star-on"></span>-->
+            <!--<span class="star-off"></span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="apply-content1-r fl">-->
+        <!--<button><a href="{{findOne.downloadUrl}}" target="_blank">直接下载</a></button>-->
+      <!--</div>-->
+      <!--<div class="apply-content1-p"><a href="javascript:void(0)">查看详细<img src="assets/images/arrow-down.png" alt=""></a>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <!--&lt;!&ndash; 内容二 &ndash;&gt;-->
+    <!--<div class="apply-content2">-->
+      <!--<div class="apply-content-tit">软件屏幕截图</div>-->
+      <!--<div class="apply-content2-con" style="padding: 0;">-->
+        <!--&lt;!&ndash; 轮播 &ndash;&gt;-->
+        <!--<div class="picScroll">-->
+          <!--<div class="tempWrap">-->
+            <!--<ul>-->
+              <!--<li ng-repeat="slide in findOne.Screenshot" my-carousel><a  target="_blank" href="http://www.superslide2.com/"><img ng-src="{{slide.img}}"/>{{$index}}</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+            <!---->
+          <!--<a class="prev" href="javascript:void(0)"><img src="assets/images/arrow-left.png" alt=""></a>-->
+          <!--<a class="next" href="javascript:void(0)"><img src="assets/images/arrow-right.png" alt=""></a>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash; 轮播 &ndash;&gt;-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="apply-content3">-->
+      <!--<div class="apply-content-tit">应用介绍</div>-->
+      <!--<div class="apply-content3-con">-->
+        <!--<p ng-repeat="Introduction in findOne.applyIntroduction">-->
+          <!--{{Introduction.title}}-->
+          <!--<span ng-repeat="child in Introduction.child" style="display: block;">{{child}}</span>-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="apply3-l-bottom apply-search-bottom">-->
+      <!--<div class="apply3-lb-tit">-->
+        <!--<div class="fl">相关应用</div>-->
+      <!--</div>-->
+      <!--<div class="apply3-lb-con">-->
+        <!--<div class="apply3-list-new" ng-repeat="relevant in findOne.relevantApply">-->
+          <!--<div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}"-->
+                                                                                        <!--alt=""></a></div>-->
+          <!--<div class="apply3-new-txt1"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt1}}</a></div>-->
+          <!--<div class="apply3-new-txt2"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt2}}</a></div>-->
+          <!--<div class="apply3-new-style">-->
+            <!--<img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'"-->
+                 <!--src="assets/images/style4.png" alt="">-->
+            <!--<img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'"-->
+                 <!--src="assets/images/style2.png" alt="">-->
+            <!--<img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'"-->
+                 <!--src="assets/images/style1.png" alt="">-->
+            <!--<img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"-->
+                 <!--alt="">-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; 主体页面结束 &ndash;&gt;-->
+
+
+
+
+
+
+
+
+
 <!-- 主体页面开始 -->
-<div class="apply-content">
-  <div class="div-c apply">
-    <!-- 内容一 -->
-    <div class="apply-content1">
-      <div class="apply-content1-l fl">
-        <img ng-src="{{findOne.img}}" alt="">
+<div class="div-c clearfix">
+  <div class="config1">
+    <div class="config1-l">
+      <div class="config-img-big"><img src="assets/images/img-big.png" alt=""></div>
+      <div class="config-img-little">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
+        <img src="assets/images/img-big.png" alt="">
       </div>
-      <div class="apply-content1-c fl">
-        <div class="company-name">{{findOne.companyName}}</div>
-        <div class="company-topic">{{findOne.name}}</div>
-        <div class="company-style">分类：{{findOne.type}} | 应用平台
-          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'windows'" src="assets/images/style4.png"
-               alt="">
-          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'iphone'" src="assets/images/style2.png"
-               alt="">
-          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'android'" src="assets/images/style1.png"
-               alt="">
-          <img ng-repeat="platForm in findOne.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
-               alt=""></div>
-        <div class="company-star fl">
-          <div class="star-part">
-            <span ng-style="{'width':'{{findOne.star_live * 20}}'+'%'}" class="star-on"></span>
-            <span class="star-off"></span>
+    </div>
+    <div class="config1-r">
+      <div class="config1-tip">
+        <div class="fl">{{detail.name}}</div>
+        <div class="fr">
+          <img ng-repeat="platforms in detail.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+        </div>
+      </div>
+      <div class="config1-con">
+        {{detail.max_version.description}}
+      </div>
+      <div class="config1-info">
+        <div class="config1-info-list">
+          <div class="config1-info-left">下载：</div>
+          <div class="config1-info-right">{{detail.download_count}}次</div>
+        </div>
+        <div class="config1-info-list">
+          <div class="config1-info-left">收藏：</div>
+          <div class="config1-info-right">{{detail.collect_count}}</div>
+        </div>
+      </div>
+      <div class="config1-info">
+        <div class="config1-info-list">
+          <div class="config1-info-left">评价：</div>
+          <div class="config1-info-right">
+            <div class="star">
+              <div class="star-part fl">
+                <span ng-style="{'width':'{{detail.avg_score * 20}}'+'%'}" class="star-on"></span>
+                <span class="star-off"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="config1-info-list">
+          <div class="config1-info-left">{{detail.avg_score}}</div>
+          <div class="config1-info-right">分</div>
+        </div>
+      </div>
+      <div class="config1-info">
+        <div class="config1-info-list">
+          <div class="config1-info-left">版本阶段：</div>
+          <div class="config1-info-right">
+            <img ng-if="detail.max_version.version_status == 0" src="assets/images/test.png" alt="">
+            <img ng-if="detail.max_version.version_status == 1" src="assets/images/test.png" alt="">
+            <img ng-if="detail.max_version.version_status == 2" src="assets/images/test.png" alt="">
+          </div>
+        </div>
+        <div class="config1-info-list">
+          <div class="config1-info-left">版本号：</div>
+          <div class="config1-info-right">{{detail.max_version.version}}</div>
+        </div>
+      </div>
+      <div class="config1-info">
+        <div class="config1-info-list">
+          <div class="config1-info-left">分类标签：</div>
+          <div class="config1-info-right">
+            <span ng-repeat="characters in detail.app_characters">{{characters.name}} &nbsp; &nbsp;</span>
           </div>
         </div>
       </div>
-      <div class="apply-content1-r fl">
-        <button><a href="{{findOne.downloadUrl}}" target="_blank">直接下载</a></button>
-      </div>
-      <div class="apply-content1-p"><a href="javascript:void(0)">查看详细<img src="assets/images/arrow-down.png" alt=""></a>
-      </div>
-    </div>
-
-
-    <!-- 内容二 -->
-    <div class="apply-content2">
-      <div class="apply-content-tit">软件屏幕截图</div>
-      <div class="apply-content2-con" style="padding: 0;">
-        <!-- 轮播 -->
-        <div class="picScroll">
-          <div class="tempWrap">
-            <ul>
-              <li ng-repeat="slide in findOne.Screenshot" my-carousel><a  target="_blank" href="http://www.superslide2.com/"><img ng-src="{{slide.img}}"/>{{$index}}</a></li>
-            </ul>
+      <div class="config1-info">
+        <div class="config1-info-list">
+          <div class="config1-info-left">开发者：</div>
+          <div class="config1-info-right">
+            {{detail.user.name}}
           </div>
-            
-          <a class="prev" href="javascript:void(0)"><img src="assets/images/arrow-left.png" alt=""></a>
-          <a class="next" href="javascript:void(0)"><img src="assets/images/arrow-right.png" alt=""></a>
         </div>
-
-        <!-- 轮播 -->
       </div>
+      <div class="config1-info">
+        <button>立即下载</button>
+      </div>
+      <div class="config1-info">
+        <img src="assets/images/code.png" alt="" class="config-code">
+      </div>
+
     </div>
-    <div class="apply-content3">
-      <div class="apply-content-tit">应用介绍</div>
-      <div class="apply-content3-con">
-        <p ng-repeat="Introduction in findOne.applyIntroduction">
-          {{Introduction.title}}
-          <span ng-repeat="child in Introduction.child" style="display: block;">{{child}}</span>
+  </div>
+  <div class="config2">
+    <div class="config2-l">
+      <div class="config2-l-tab">
+        <ul ng-init="vm.activeTab=1">
+          <li  ng-class="{'config2-li-now': vm.activeTab == 1}">
+            <a href="javascript:void(0);" ng-click="vm.activeTab = 1">详细说明</a>
+          </li>
+          <li ng-class="{'config2-li-now': vm.activeTab == 2}">
+            <a href="javascript:void(0);" ng-click="vm.activeTab = 2">配置参数</a>
+          </li>
+        </ul>
+      </div>
+      <div class="config2-l-con" ng-show="vm.activeTab == 1">
+        <div class="config2-l-tit">应用介绍</div>
+        <p>
+          不一样的双11-新人专享】 <br/>11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包！ <br/>11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！
+        </p>
+        <p>
+          11月最新劲爆活动一：面霜保湿时代  <br/>活动时间：11月3日20:00-11月4日19:59在唯品会app内开售  <br/>活动内容：最高满199-100，十大明星面霜5折封顶
+        </p>
+        <p>
+          11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！ <br/> 活动时间：2015年10月31日-2015年11月19日  <br/>活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。
+          <img src="assets/images/img-big.png" alt="" class="con-img">
+        </p>
+
+
+        <div class="config2-l-tit">免责声明</div>
+        <p>
+          【不一样的双11-新人专享】 <br/>11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包！ <br/>11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！
+        </p>
+        <p>
+          11月最新劲爆活动一：面霜保湿时代 <br/>活动时间：11月3日20:00-11月4日19:59在唯品会app内开售 <br/>活动内容：最高满199-100，十大明星面霜5折封顶
         </p>
       </div>
-    </div>
 
-    <div class="apply3-l-bottom apply-search-bottom">
-      <div class="apply3-lb-tit">
-        <div class="fl">相关应用</div>
-      </div>
-      <div class="apply3-lb-con">
-        <div class="apply3-list-new" ng-repeat="relevant in findOne.relevantApply">
-          <div class="apply3-new-img"><a ng-href="#/applycontent/{{relevant.id}}/"><img ng-src="{{relevant.img}}"
-                                                                                        alt=""></a></div>
-          <div class="apply3-new-txt1"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt1}}</a></div>
-          <div class="apply3-new-txt2"><a ng-href="#/applycontent/{{relevant.id}}/">{{relevant.txt2}}</a></div>
-          <div class="apply3-new-style">
-            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'windows'"
-                 src="assets/images/style4.png" alt="">
-            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'iphone'"
-                 src="assets/images/style2.png" alt="">
-            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'android'"
-                 src="assets/images/style1.png" alt="">
-            <img ng-repeat="platForm in relevant.plat_form" ng-show="platForm == 'Linux'" src="assets/images/style3.png"
-                 alt="">
-          </div>
+      <div class="config2-l-con" ng-show="vm.activeTab == 2">
+        <div class="config2-l-tit">配置参数</div>
+        <div class="config2-l-table">
+          <ul class="table-head">
+            <li class="li1">适用眼镜</li>
+            <li class="li2">系统版本</li>
+            <li class="li3">防眩晕指数</li>
+            <li class="li4">操作控制</li>
+            <li class="li5">价格（Chn）</li>
+            <li class="li6">价格（USD）</li>
+            <li class="li7">操作难度</li>
+            <li class="li8">画面质量</li>
+            <li class="li9">玩家模式</li>
+          </ul>
+          <ul class="table-body" ng-repeat="configure in detail.max_version.app_version_platforms">
+            <li class="li1"><span ng-repeat="glasses in configure.glasses">{{glasses.name}}&nbsp;</span></li>
+            <li class="li2">{{configure.os_type.name}}</li>
+            <li class="li3">{{configure.prevent_dizziness}}</li>
+            <li class="li4"><span ng-repeat="opTypes in configure.op_types">{{opTypes.name}}&nbsp;</span></li>
+            <li class="li5">免费</li>
+            <li class="li6">free</li>
+            <li class="li7">{{configure.op_difficulty.name}}</li>
+            <li class="li8">{{configure.image_quality.name}}</li>
+            <li class="li9"><span ng-repeat="playModes in configure.play_modes">{{playModes.name}}&nbsp;</span></li>
+          </ul>
+          <!--<ul class="table-body">-->
+            <!--<li class="li1">CardBoard;唯镜;通用</li>-->
+            <!--<li class="li2">Android4.0</li>-->
+            <!--<li class="li3">4</li>-->
+            <!--<li class="li4">遥控手柄</li>-->
+            <!--<li class="li5">免费</li>-->
+            <!--<li class="li6">free</li>-->
+            <!--<li class="li7">普通</li>-->
+            <!--<li class="li8">优秀</li>-->
+            <!--<li class="li9">单人</li>-->
+          <!--</ul>-->
+          <!--<ul class="table-body">-->
+            <!--<li class="li1">CardBoard;唯镜;通用</li>-->
+            <!--<li class="li2">Android4.0</li>-->
+            <!--<li class="li3">4</li>-->
+            <!--<li class="li4">遥控手柄</li>-->
+            <!--<li class="li5">免费</li>-->
+            <!--<li class="li6">free</li>-->
+            <!--<li class="li7">普通</li>-->
+            <!--<li class="li8">优秀</li>-->
+            <!--<li class="li9">单人</li>-->
+          <!--</ul>-->
         </div>
       </div>
+
+
+    </div>
+    <div class="config2-r">
+      <a href="javascript:void(0);">
+        <img src="assets/images/buy.png" alt="">
+      </a>
+      <a href="javascript:void(0);" ng-href="#/develop_login">
+        <img src="assets/images/share.png" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="apply3-l-bottom apply-search-bottom">
+    <div class="apply3-lb-tit">
+      <div class="fl">下载该应用的人还下载了</div>
+    </div>
+    <div class="apply3-lb-con">
+      <div class="apply3-list-new" ng-repeat="list in findfootApps">
+        <div class="apply3-new-img"><a href="javascript:void(0)" ng-href="#/applycontent/{{list.id}}/" ><img ng-src="{{list.image}}" alt=""></a></div>
+        <div class="apply3-new-txt1"><a href="javascript:void(0)" ng-href="#/applycontent/{{list.id}}/" >{{list.name}}</a></div>
+        <div class="apply3-new-txt2"><a href="javascript:void(0)" ng-href="#/applycontent/{{list.id}}/">{{list.name}}</a></div>
+        <div class="apply3-new-style">
+          <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+
+
+
+
+
 <!-- 主体页面结束 -->
+
+
+
+
+
+

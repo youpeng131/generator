@@ -8,723 +8,684 @@
     .constant('toastr', toastr)
     .constant('moment', moment)
     .constant('apiHost', 'http://127.0.0.1')
-    .constant('CONFIGS', {
-      gameList: [
-        {
-          'id': 1,
-          'name': '完美世界',
-          'star_live': 0,
-          'plat_form': ['windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 12345,
-          'collectionNum': 424423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'}
-          ],
-          'applyIntroduction': [{
-            'title': '【不一样的双11-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          }
-          ]
-        },
-        {
-          'id': 2,
-          'name': '英雄联盟',
-          'star_live': 0.5,
-          'plat_form': ['iphone', 'windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 12346,
-          'collectionNum': 4234423,
-          'companyName': '腾讯网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'},
-            {'img': 'assets/images/shot-screen.png'}
-
-          ],
-          'applyIntroduction': [{
-            'title': '【不一样的双12-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
+    .constant('APP', {
+      "head_apps": {
+        "apps": {
+          "per_page": 10,
+          "from": 1,
+          "to": 1,
+          "data": [
             {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 3,
-          'name': '风暴英雄',
-          'star_live': 5,
-          'plat_form': ['iphone', 'windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 123471,
-          'collectionNum': 4244263,
-          'companyName': '暴雪网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双13-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
+              "id": 1,
+              "collect_count": 0,
+              "max_version": {
+                "version": "1.0.2",
+                "id": 1,
+                "version_status": 0,
+                "summary": "游戏简介"
+              },
+              "browse_count": 10,
+              "avg_score": 3,
+              "user_id": 1,
+              "max_version_id": 1,
+              "image": "assets\/images\/apply-list.png",
+              "app_platforms": [
+                {
+                  "platform_id": 4,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 4,
+                    "name": "ios",
+                    "icon": "fa fa-apple"
+                  }
+                },
+                {
+                  "platform_id": 5,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 5,
+                    "name": "android",
+                    "icon": "fa fa-android"
+                  }
+                },
+                {
+                  "platform_id": 2,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 2,
+                    "name": "mac",
+                    "icon": "icon-finder"
+                  }
+                },
+                {
+                  "platform_id": 1,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 1,
+                    "name": "windows",
+                    "icon": "fa fa-windows"
+                  }
+                }
+              ],
+              "name": "SuperRPG121",
+              "download_count": 161
             },
             {
-              'id': 88,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
+              "id": 2,
+              "collect_count": 0,
+              "max_version": {
+                "version": "1.0.2",
+                "id": 1,
+                "version_status": 0,
+                "summary": "游戏简介"
+              },
+              "browse_count": 10,
+              "avg_score": 0.5,
+              "user_id": 1,
+              "max_version_id": 1,
+              "image": "assets\/images\/apply-list.png",
+              "app_platforms": [
+                {
+                  "platform_id": 4,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 4,
+                    "name": "ios",
+                    "icon": "fa fa-apple"
+                  }
+                },
+                {
+                  "platform_id": 5,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 5,
+                    "name": "android",
+                    "icon": "fa fa-android"
+                  }
+                },
+                {
+                  "platform_id": 2,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 2,
+                    "name": "mac",
+                    "icon": "icon-finder"
+                  }
+                },
+                {
+                  "platform_id": 1,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 1,
+                    "name": "windows",
+                    "icon": "fa fa-windows"
+                  }
+                }
+              ],
+              "name": "SuperRPG125",
+              "download_count": 110
+            },
+            {
+              "id": 3,
+              "collect_count": 0,
+              "max_version": {
+                "version": "1.0.2",
+                "id": 1,
+                "version_status": 0,
+                "summary": "游戏简介"
+              },
+              "browse_count": 10,
+              "avg_score": 2,
+              "user_id": 1,
+              "max_version_id": 1,
+              "image": "assets\/images\/apply-list.png",
+              "app_platforms": [
+                {
+                  "platform_id": 4,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 4,
+                    "name": "ios",
+                    "icon": "fa fa-apple"
+                  }
+                },
+                {
+                  "platform_id": 5,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 5,
+                    "name": "android",
+                    "icon": "fa fa-android"
+                  }
+                },
+                {
+                  "platform_id": 2,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 2,
+                    "name": "mac",
+                    "icon": "icon-finder"
+                  }
+                },
+                {
+                  "platform_id": 1,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 1,
+                    "name": "windows",
+                    "icon": "fa fa-windows"
+                  }
+                }
+              ],
+              "name": "SuperRPG14",
+              "download_count": 360
             }
-          ]
-
+          ],
+          "next_page_url": null,
+          "total": 1,
+          "current_page": 1,
+          "last_page": 1,
+          "prev_page_url": null
+        }
+      },
+      "foot_apps": {
+        "apps": {
+          "per_page": 10,
+          "from": 1,
+          "to": 1,
+          "data": [
+            {
+              "id": 1,
+              "collect_count": 0,
+              "max_version": {
+                "version": "1.0.2",
+                "id": 1,
+                "version_status": 0,
+                "summary": "游戏简介"
+              },
+              "browse_count": 10,
+              "avg_score": 0,
+              "user_id": 1,
+              "max_version_id": 1,
+              "image": "assets\/images\/apply-list.png",
+              "app_platforms": [
+                {
+                  "platform_id": 4,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 4,
+                    "name": "ios",
+                    "icon": "fa fa-apple"
+                  }
+                },
+                {
+                  "platform_id": 5,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 5,
+                    "name": "android",
+                    "icon": "fa fa-android"
+                  }
+                },
+                {
+                  "platform_id": 2,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 2,
+                    "name": "mac",
+                    "icon": "icon-finder"
+                  }
+                },
+                {
+                  "platform_id": 1,
+                  "app_description_id": 1,
+                  "max_version_id": 1,
+                  "platform": {
+                    "id": 1,
+                    "name": "windows",
+                    "icon": "fa fa-windows"
+                  }
+                }
+              ],
+              "name": "SuperRPG12",
+              "download_count": 160
+            }
+          ],
+          "next_page_url": null,
+          "total": 1,
+          "current_page": 1,
+          "last_page": 1,
+          "prev_page_url": null
+        }
+      },
+      "apps": {
+        "per_page": 10,
+        "from": 1,
+        "to": 1,
+        "data": [
+          {
+            "id": 1,
+            "collect_count": 0,
+            "max_version": {
+              "version": "1.0.2",
+              "id": 1,
+              "version_status": 0,
+              "summary": "游戏简介"
+            },
+            "browse_count": 10,
+            "avg_score": 0,
+            "user_id": 1,
+            "max_version_id": 1,
+            "image": "assets\/images\/apply-list.png",
+            "app_platforms": [
+              {
+                "platform_id": 4,
+                "app_description_id": 1,
+                "max_version_id": 1,
+                "platform": {
+                  "id": 4,
+                  "name": "ios",
+                  "icon": "fa fa-apple"
+                }
+              },
+              {
+                "platform_id": 5,
+                "app_description_id": 1,
+                "max_version_id": 1,
+                "platform": {
+                  "id": 5,
+                  "name": "android",
+                  "icon": "fa fa-android"
+                }
+              },
+              {
+                "platform_id": 2,
+                "app_description_id": 1,
+                "max_version_id": 1,
+                "platform": {
+                  "id": 2,
+                  "name": "mac",
+                  "icon": "icon-finder"
+                }
+              },
+              {
+                "platform_id": 1,
+                "app_description_id": 1,
+                "max_version_id": 1,
+                "platform": {
+                  "id": 1,
+                  "name": "windows",
+                  "icon": "fa fa-windows"
+                }
+              }
+            ],
+            "name": "SuperRPG12",
+            "download_count": 160
+          }
+        ],
+        "next_page_url": null,
+        "total": 1,
+        "current_page": 1,
+        "last_page": 1,
+        "prev_page_url": null
+      },
+      "characters": [
+        {
+          "id": 1,
+          "name": "动作冒险"
         },
         {
-          'id': 4,
-          'name': '我叫MT',
-          'star_live': 1.5,
-          'plat_form': ['iphone', 'android'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 1234855,
-          'collectionNum': 5424423,
-          'companyName': '北京乐动卓越科技有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双14-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 5,
-          'name': '2048',
-          'star_live': 2,
-          'plat_form': ['iphone', 'android'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 12349,
-          'collectionNum': 4244523,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双15-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 6,
-          'name': '地下城与勇士',
-          'star_live': 2.5,
-          'plat_form': ['windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 123410,
-          'collectionNum': 4245423,
-          'companyName': '腾讯网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双16-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 7,
-          'name': '星际争霸',
-          'star_live': 3,
-          'plat_form': ['iphone', 'windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 123411,
-          'collectionNum': 4244243,
-          'companyName': '暴雪网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双17-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 8,
-          'name': '魔兽世界',
-          'star_live': 3.5,
-          'plat_form': ['iphone', 'windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 1234113,
-          'collectionNum': 4242423,
-          'companyName': '暴雪网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双18-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 9,
-          'name': '暗黑3',
-          'star_live': 4,
-          'plat_form': ['iphone', 'windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 12355,
-          'collectionNum': 4242423,
-          'companyName': '暴雪网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双19-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
-        },
-        {
-          'id': 10,
-          'name': '大唐无双',
-          'star_live': 4.5,
-          'plat_form': ['windows'],
-          'img': 'assets/images/apply-list.png',
-          'downloadNum': 13345,
-          'collectionNum': 424323,
-          'companyName': '网易网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658',
-          'Screenshot': [{'img': 'assets/images/shot-screen.png'}, {'img': 'assets/images/shot-screen.png'}],
-          'applyIntroduction': [{
-            'title': '【不一样的双20-新人专享】',
-            'child': [
-              '11月2日10:00-11月5日09:59，新会员可以享受满39元限时包邮！还能领取60元红包!',
-              '11月5日10:00-11月12日09:59，新会员可以享受满39元限时包邮！还能领取100元红包！'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一：面霜保湿时代',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日',
-              '活动内容：最高满199-100，十大明星面霜5折封顶'
-            ]
-          }, {
-            'title': '11月最新劲爆活动一:签到有礼！chocolate潮范随行杯免费送！',
-            'child': [
-              '活动时间：2015年10月31日-2015年11月19日 ',
-              '活动内容：【签到有礼】活动，新会员签到一次可获得100个唯品币，累计签到满7次有机会赢取CHOCOLATE:限量随行杯一个。'
-            ]
-          }],
-          'relevantApply': [{
-            'id': 11,
-            'txt1': 'Dimensional',
-            'txt2': 'Pre-Release',
-            'plat_form': ['windows'],
-            'img': 'assets/images/apply-list-new.png',
-            'downloadNum': 223745,
-            'collectionNum': 424423,
-            'companyName': '北京完美世界网络技术有限公司',
-            'type': '游戏',
-            'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-          },
-            {
-              'id': 12,
-              'txt1': 'Dimensional',
-              'txt2': 'Pre-Release',
-              'plat_form': ['iphone', 'windows', 'android'],
-              'img': 'assets/images/apply-list-new.png',
-              'downloadNum': 62345,
-              'collectionNum': 4249423,
-              'companyName': '北京完美世界网络技术有限公司',
-              'type': '游戏',
-              'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-            }
-          ]
-
+          "id": 2,
+          "name": "角色扮演"
         }
       ],
-      newEst: [
+      "setting": [
         {
-          'id': 11,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['windows'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 223745,
-          'collectionNum': 424423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
+          "name": "UserMainPageTopImage",
+          "img": "assets\/images\/head-bg.png"
         },
         {
-          'id': 12,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['iphone', 'windows', 'android'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 62345,
-          'collectionNum': 4249423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 13,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 12745,
-          'collectionNum': 42434423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 14,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 32345,
-          'collectionNum': 4245423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 15,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['windows', 'iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 62345,
-          'collectionNum': 4244823,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 16,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 82345,
-          'collectionNum': 4244253,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 17,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['windows', 'iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 12945,
-          'collectionNum': 4247423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 18,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 302345,
-          'collectionNum': 4249423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 19,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['windows', 'iphone'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 134545,
-          'collectionNum': 4248623,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
-        },
-        {
-          'id': 20,
-          'txt1': 'Dimensional',
-          'txt2': 'Pre-Release',
-          'plat_form': ['windows'],
-          'img': 'assets/images/apply-list-new.png',
-          'downloadNum': 1662345,
-          'collectionNum': 42004423,
-          'companyName': '北京完美世界网络技术有限公司',
-          'type': '游戏',
-          'downloadUrl': 'http://img.hb.aicdn.com/0a067e459b62467c50579d0831330fb6eed23dcd84585-GmNZdy_fw658'
+          "name": "UserMainPageMiddleImage",
+          "img": "assets\/images\/head-bg.png"
         }
-
+      ],
+      "platforms": [
+        {
+          "id": 1,
+          "name": "windows",
+          "icon": "fa fa-windows"
+        },
+        {
+          "id": 2,
+          "name": "mac",
+          "icon": "icon-finder"
+        },
+        {
+          "id": 3,
+          "name": "linux",
+          "icon": "fa fa-linux"
+        },
+        {
+          "id": 4,
+          "name": "ios",
+          "icon": "fa fa-apple"
+        },
+        {
+          "id": 5,
+          "name": "android",
+          "icon": "fa fa-android"
+        }
       ]
+    })
+    .constant('DETAIL',
+    {
+      "app": {
+        "id": 1,
+        "collect_count": 0,
+        "max_version": {
+          "summary": "游戏简介",
+          "version_status": 0,
+          "id": 1,
+          "app_images": [
+            {
+              "image": "assets\/images\/shot-screen.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/shot-screen.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/shot-screen.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/shot-screen.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/shot-screen.png",
+              "app_version_id": 1
+            }
+          ],
+          "app_version_platforms": [
+            {
+              "id": 1,
+              "glasses": [
+                {
+                  "name": "CardBoard"
+                },
+                {
+                  "name": "唯镜"
+                }
+              ],
+              "app_version_id": 1,
+              "play_modes": [
+                {
+                  "name": "单人"
+                },
+                {
+                  "name": "多人"
+                }
+              ],
+              "prevent_dizziness": 6,
+              "op_types": [
+                {
+                  "name": "头控"
+                },
+                {
+                  "name": "手势"
+                }
+              ],
+              "platform": {
+                "id": 4,
+                "name": "ios"
+              },
+              "image_quality_id": 1,
+              "image_quality": {
+                "id": 1,
+                "name": "优秀"
+              },
+              "platform_id": 4,
+              "os_type_id": 1,
+              "op_difficulty_id": 1,
+              "op_difficulty": {
+                "id": 1,
+                "name": "困难"
+              },
+              "os_type": {
+                "id": 1,
+                "name": "IOS 9"
+              }
+            },
+            {
+              "id": 2,
+              "glasses": [
+
+                {
+                  "name": "魔镜"
+                },
+                {
+                  "name": "gearvr"
+                }
+              ],
+              "app_version_id": 1,
+              "play_modes": [
+                {
+                  "name": "单人"
+                },
+                {
+                  "name": "多人"
+                }
+              ],
+              "prevent_dizziness": 6,
+              "op_types": [
+                {
+                  "name": "头控"
+                },
+                {
+                  "name": "手势"
+                }
+              ],
+              "platform": {
+                "id": 5,
+                "name": "android"
+              },
+              "image_quality_id": 1,
+              "image_quality": {
+                "id": 1,
+                "name": "优秀"
+              },
+              "platform_id": 5,
+              "os_type_id": 2,
+              "op_difficulty_id": 1,
+              "op_difficulty": {
+                "id": 1,
+                "name": "困难"
+              },
+              "os_type": {
+                "id": 2,
+                "name": "Android 4"
+              }
+            },
+            {
+              "id": 3,
+              "glasses": [
+                {
+                  "name": "CardBoard"
+                },
+                {
+                  "name": "gearvr"
+                }
+              ],
+              "app_version_id": 1,
+              "play_modes": [
+                {
+                  "name": "单人"
+                },
+                {
+                  "name": "多人"
+                }
+              ],
+              "prevent_dizziness": 6,
+              "op_types": [
+                {
+                  "name": "头控"
+                },
+                {
+                  "name": "手势"
+                }
+              ],
+              "platform": {
+                "id": 2,
+                "name": "mac"
+              },
+              "image_quality_id": 1,
+              "image_quality": {
+                "id": 1,
+                "name": "优秀"
+              },
+              "platform_id": 2,
+              "os_type_id": 3,
+              "op_difficulty_id": 1,
+              "op_difficulty": {
+                "id": 1,
+                "name": "困难"
+              },
+              "os_type": {
+                "id": 3,
+                "name": "OS 10"
+              }
+            },
+            {
+              "id": 4,
+              "glasses": [
+                {
+                  "name": "唯镜"
+                },
+                {
+                  "name": "魔镜"
+                }
+              ],
+              "app_version_id": 1,
+              "play_modes": [
+                {
+                  "name": "单人"
+                },
+                {
+                  "name": "多人"
+                }
+              ],
+              "prevent_dizziness": 6,
+              "op_types": [
+                {
+                  "name": "头控"
+                },
+                {
+                  "name": "手势"
+                }
+              ],
+              "platform": {
+                "id": 1,
+                "name": "windows"
+              },
+              "image_quality_id": 1,
+              "image_quality": {
+                "id": 1,
+                "name": "优秀"
+              },
+              "platform_id": 1,
+              "os_type_id": 4,
+              "op_difficulty_id": 1,
+              "op_difficulty": {
+                "id": 1,
+                "name": "困难"
+              },
+              "os_type": {
+                "id": 4,
+                "name": "Windows 8"
+              }
+            }
+          ],
+          "version": "1.0.2",
+          "description": "这个游戏无与伦比"
+        },
+        "browse_count": 14,
+        "avg_score": 0,
+        "user_id": 1,
+        "app_characters": [
+          {
+            "name": "动作冒险"
+          },
+          {
+            "name": "角色扮演"
+          }
+        ],
+        "max_version_id": 1,
+        "image": "assets\/images\/apply-list.png",
+        "app_platforms": [
+          {
+            "platform_id": 4,
+            "app_description_id": 1,
+            "max_version_id": 1,
+            "platform": {
+              "id": 4,
+              "name": "ios",
+              "icon": "fa fa-apple"
+            }
+          },
+          {
+            "platform_id": 5,
+            "app_description_id": 1,
+            "max_version_id": 1,
+            "platform": {
+              "id": 5,
+              "name": "android",
+              "icon": "fa fa-android"
+            }
+          },
+          {
+            "platform_id": 2,
+            "app_description_id": 1,
+            "max_version_id": 1,
+            "platform": {
+              "id": 2,
+              "name": "mac",
+              "icon": "icon-finder"
+            }
+          },
+          {
+            "platform_id": 1,
+            "app_description_id": 1,
+            "max_version_id": 1,
+            "platform": {
+              "id": 1,
+              "name": "windows",
+              "icon": "fa fa-windows"
+            }
+          }
+        ],
+        "user": {
+          "id": 1,
+          "name": "admin"
+        },
+        "name": "SuperRPG12",
+        "download_count": 160
+      }
     });
 })();
