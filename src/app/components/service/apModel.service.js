@@ -6,6 +6,7 @@
     .factory('findAllApps', findAllApps)
     .factory('headApps', headApps)
     .factory('footApps', footApps)
+    .factory('pages', pages)
     .factory('filterApps', filterApps)
     .factory('charactersFilter', charactersFilter)
     .factory('userLogin', userLogin)
@@ -56,12 +57,9 @@
 
     return service;
 
-    function find(limit) {
-      if (!limit) {
-        limit = 30;
-      }
+    function find() {
 
-      return $http.get(apiHost + '/head_apps?per_page=' + limit)
+      return $http.get(apiHost + '/head_apps')
         .then(getContributorsComplete)
         .catch(getContributorsFailed);
 
@@ -84,12 +82,8 @@
 
     return service;
 
-    function find(limit) {
-      if (!limit) {
-        limit = 30;
-      }
-
-      return $http.get(apiHost + '/foot_apps?per_page=' + limit)
+    function find() {
+      return $http.get(apiHost + '/foot_apps')
         .then(getContributorsComplete)
         .catch(getContributorsFailed);
 
@@ -102,6 +96,36 @@
       }
     }
   }
+
+  // 分页
+  function pages($log, $http, apiHost) {
+
+    var service = {
+      find: find
+    };
+
+    return service;
+
+    function find(limit) {
+      if (!limit) {
+        limit = 5;
+      }
+
+      return $http.get(apiHost + '/head_apps?per_page=' + limit)
+        .then(getContributorsComplete)
+        .catch(getContributorsFailed);
+
+      function getContributorsComplete(response) {
+        return response.data;
+      }
+
+      function getContributorsFailed(error) {
+        $log.error('XHR Failed for getContributors.\n' + angular.toJson(error.data, true));
+      }
+    }
+  }
+
+
 
   // 筛选
   function filterApps($log, $http, apiHost) {

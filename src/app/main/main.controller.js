@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope, $rootScope, $state, APP, headApps, footApps, filterApps, charactersFilter) {
+  function MainController($scope, $rootScope, $state, APP, headApps, footApps, filterApps, charactersFilter, pages, $log) {
     var vm = $scope.vm = {};
 
     /**************************正式环境**********************/
@@ -18,20 +18,64 @@
       $rootScope.isIndex = false;
     });
 
-    // 查询findAllApps  @地址 'app/components/service/apModel.service.js' @方法 findAllApps
+
+    // 跳转
+    $scope.Jump = function(id) {
+      console.log($scope.key,$scope.bigTotalItems);
+      if (id === 1 ) {
+        paginations($scope.bigTotalItems, 1, $scope.key);
+      }
+      if (id === 2) {
+        paginations($scope.bigTotalItems, 1,$scope.key);
+      }
+    };
+
+    // 分页
+    var totalItemArr = [];
+    function paginations(totalItems, id, bigCurrentPage) {
+
+      for (var i = 0; i < totalItems; i++) {
+        totalItemArr.push(i+1)
+      }
+
+      $scope.totalItemArr = totalItemArr;
+
+
+      $scope.maxSize = 5;
+      $scope.bigTotalItems = totalItems;
+      $scope.bigCurrentPage = bigCurrentPage;
+      $scope.pageChanged = function () {
+        //头部
+        if (id === 1) {
+          pages.find($scope.bigCurrentPage).then(function (res) {
+            $scope.findHeadApps = res.head_apps.apps.data;
+          }).catch(function (err) {
+            console.log(err);
+          });
+        }
+        //尾部
+        if (id === 2) {
+
+        }
+
+      };
+    }
+
 
     // 查询head_apps  @地址 'app/components/service/apModel.service.js' @方法 findHeadApps
 
-    var page = 6;
-    headApps.find(page).then(function (res) {
-      $scope.findHeadApps = res.head_apps.apps.data;
-    }).catch(function (err) {
-      console.log(err);
-    });
+      headApps.find().then(function (res) {
+        paginations(res.head_apps.apps.total, 1,1);
+        $scope.findHeadApps = res.head_apps.apps.data;
+      }).catch(function (err) {
+        console.log(err);
+      });
+
+
 
     // 查询foot_apps  @地址 'app/components/service/apModel.service.js' @方法 findFootApps
-    var page = 6;
-    footApps.find(page).then(function (res) {
+    footApps.find().then(function (res) {
+      paginations(res.foot_apps.apps.total, 2,1);
       $scope.findfootApps = res.foot_apps.apps.data;
     }).catch(function (err) {
       console.log(err);
@@ -104,6 +148,31 @@
 
 
     /**************************测试环境**********************/
+
+    $scope.myInterval = 5000;
+    $scope.noWrapSlides = false;
+    $scope.slides = [{'image':'assets/images/ppt.png'},{'image':'assets/images/ppt.png'}];
+    $scope.totalItems = 64;
+    $scope.currentPage = 4;
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = $scope.totalItems;
+    $scope.bigCurrentPage = 1;
+
+    var totalItemArr = [];
+    for (var i = 0; i < $scope.totalItems; i++) {
+      totalItemArr.push(i+1)
+    }
+
+    console.log(totalItemArr);
+    $scope.totalItemArr = totalItemArr;
+
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
+    };
+
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
 
     //查询findAllApps
     $scope.findAllApps = APP;

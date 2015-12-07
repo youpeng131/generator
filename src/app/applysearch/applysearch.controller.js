@@ -14,6 +14,29 @@
     var key = $stateParams.key;
     var vm = $scope.vm = {};
 
+    $scope.totalItems = 64;
+    $scope.currentPage = 4;
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = $scope.totalItems;
+    $scope.bigCurrentPage = 1;
+
+    var totalItemArr = [];
+    for (var i = 0; i < $scope.totalItems; i++) {
+      totalItemArr.push(i+1)
+    }
+
+    console.log(totalItemArr);
+    $scope.totalItemArr = totalItemArr;
+
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
+    };
+
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
+
+
     /**************************正式环境**********************/
 
     // 查询searchApps  @地址 'app/components/service/apModel.service.js' @方法 searchApps
@@ -33,6 +56,8 @@
     });
 
     /**************************测试环境**********************/
+
+
 
     // 搜索
     var searchResult = [];

@@ -4,24 +4,20 @@
 <div class="div-c clearfix">
   <div class="g-banner">
     <div class="g-banner-content">
-      <div class="banner-slide slide-active" style="display:block;background-image:url(../assets/images/ppt.png);background-size:cover;">
-        <a href="javascript:;" class="click-help"></a>
-        <!-- <div class="inner">
-          <h3 class="banner-tit"></h3>
-          <a href="javascript:void(0);" id="js-play-video" class="more">了解更多</a>
-        </div> -->
-      </div>
-      <div class="banner-slide" style="display:none;background-image:url(../assets/images/ppt.png);background-size:cover;">
-        <a href="javascript:;" class="click-help"></a>
-        <!-- <div class="inner">
-          <h3 class="banner-tit">万圣节恐怖show：吓哭慕女神的重任就交给你啦！</h3>
-        </div> -->
+      <div>
+        <carousel interval="myInterval" no-wrap="noWrapSlides">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <h4>Slide{{$index}}</h4>
+              <p>内容</p>
+            </div>
+          </slide>
+        </carousel>
       </div>
     </div>
     <div class="banner-dots">
     </div>
-    <a href="javascript:;" class="banner-anchor prev">上一张</a>
-    <a href="javascript:;" class="banner-anchor next">下一张</a>
   </div>
 
   <div class="index2">
@@ -45,25 +41,27 @@
 
       <!-- 分页部分 -->
       <div class="fenye fl">
-        <div class="first-page fl"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></div>
-        <ul class="page">
-          <li><a href="javascript:void(0);">1</a></li>
-          <li><a href="javascript:void(0);">2</a></li>
-          <li><a href="javascript:void(0);">3</a></li>
-          <li><a href="javascript:void(0);">4</a></li>
-          <li><a href="javascript:void(0);">5</a></li>
-        </ul>
-        <div class="page-dot fl">...</div>
-        <div class="last-page fl"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></div>
-        <div class="topage">
-          共100页，到第
+        <!--<div class="first-page fl"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></div>-->
+        <!--<ul class="page">-->
+          <!--<li><a href="javascript:void(0);">1</a></li>-->
+          <!--<li><a href="javascript:void(0);">2</a></li>-->
+          <!--<li><a href="javascript:void(0);">3</a></li>-->
+          <!--<li><a href="javascript:void(0);">4</a></li>-->
+          <!--<li><a href="javascript:void(0);">5</a></li>-->
+        <!--</ul>-->
+        <!--<div class="page-dot fl">...</div>-->
+        <!--<div class="last-page fl"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></div>-->
+        <div class="fl">
+          <pagination style="margin: 3px 0;" total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm"
+                      boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged()"></pagination>
+        </div>
+        <div class="topage" style="line-height: 34px;;">
+          共{{bigTotalItems}}页,到第
                             <span class="topage-span">
-                                <input type="text" value="1">
-                                <img src="assets/images/up.png" alt="" class="up">
-                                <img src="assets/images/down.png" alt="" class="down">
+                               <select style="width: 50px;height: 20px;display: inline-block;" class="form-control" ng-model="key" ng-options="o for o in totalItemArr"></select>
                             </span>
           页
-          <button class="make-sure">确定</button>
+          <button class="make-sure" style="line-height: 21px;" ng-click="Jump(1)">确定</button>
         </div>
       </div>
       <!-- 分页部分 -->
@@ -208,25 +206,17 @@
 
     <!-- 分页部分 -->
     <div class="fenye">
-      <ul class="page">
-        <li class="first-page"><a href="javascript:void(0);"><img src="assets/images/arrow-left.png" alt="">上一页</a></li>
-        <li><a href="javascript:void(0);">1</a></li>
-        <li><a href="javascript:void(0);">2</a></li>
-        <li><a href="javascript:void(0);">3</a></li>
-        <li><a href="javascript:void(0);">4</a></li>
-        <li><a href="javascript:void(0);">5</a></li>
-        <li class="page-dot">...</li>
-        <li class="last-page"><a href="javascript:void(0);">下一页<img src="assets/images/arrow-right.png" alt=""></a></li>
-      </ul>
-      <div class="topage">
-        共100页，到第
+      <div class="fl">
+        <pagination style="margin: 3px 0;" total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm"
+                    boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged()"></pagination>
+      </div>
+      <div class="topage" style="line-height: 34px;;">
+        共{{bigTotalItems}}页,到第
                             <span class="topage-span">
-                                <input type="text" value="1">
-                                <img src="assets/images/up.png" alt="" class="up">
-                                <img src="assets/images/down.png" alt="" class="down">
+                               <select style="width: 50px;height: 20px;display: inline-block;" class="form-control" ng-model="key" ng-options="o for o in totalItemArr"></select>
                             </span>
         页
-        <button class="make-sure">确定</button>
+        <button class="make-sure" style="line-height: 21px;" ng-click="Jump(1)">确定</button>
       </div>
     </div>
     <!-- 分页部分 -->

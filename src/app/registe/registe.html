@@ -11,7 +11,7 @@
           <div class="registe-r"><input type="text" placeholder="请输入您的常用邮箱" name="email" ng-model="data.email"
                                         ng-pattern="/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/" required></div>
         </div>
-        <div class="registe-div" style="margin-left: 143px;" ng-show="myForm.$submitted==true && myForm.email.$invalid">
+        <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.email.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.email.$error.required && myForm.$submitted==true">邮箱不能为空</span>
           <span ng-style="{'color':'red'}"
@@ -22,7 +22,7 @@
           <div class="registe-r"><input type="text" placeholder="个性名称" name="nickname" ng-model="data.nickname" required>
           </div>
         </div>
-        <div class="registe-div" style="margin-left: 143px;"
+        <div class="registe-div" style="margin-left: 115px;"
              ng-show="myForm.$submitted==true && myForm.nickname.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.nickname.$error.required && myForm.$submitted==true">昵称不能为空</span>
@@ -32,7 +32,7 @@
           <div class="registe-r"><input type="password" placeholder="字母数字组成" name="password" ng-model="data.password"
                                         required></div>
         </div>
-        <div class="registe-div" style="margin-left: 143px;"
+        <div class="registe-div" style="margin-left: 115px;"
              ng-show="myForm.$submitted==true && myForm.password.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.password.$error.required && myForm.$submitted==true">密码不能为空</span>
@@ -44,7 +44,7 @@
           <div class="registe-r"><input type="text" placeholder="您的手机号码" name="mobile" ng-model="data.mobile"
           ng-pattern="/^(1[345789][\d])[0-9]{8}$/" required></div>
           </div>
-          <div class="registe-div" style="margin-left: 143px;"
+          <div class="registe-div" style="margin-left: 115px;"
           ng-show="myForm.$submitted==true && myForm.mobile.$invalid">
           <span ng-style="{'color':'red'}"
           ng-show="myForm.mobile.$error.required && myForm.$submitted==true">手机号码不能为空</span>
@@ -56,7 +56,7 @@
             <div class="registe-r"><input type="text" placeholder="个性名称" name="nickname" ng-model="data.nickname" required>
             </div>
           </div>
-          <div class="registe-div" style="margin-left: 143px;"
+          <div class="registe-div" style="margin-left: 115px;"
                ng-show="myForm.$submitted==true && myForm.nickname.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.nickname.$error.required && myForm.$submitted==true">昵称不能为空</span>
@@ -66,7 +66,7 @@
             <div class="registe-r"><input type="password" placeholder="字母数字组成" name="password" ng-model="data.password"
                                           required></div>
           </div>
-          <div class="registe-div" style="margin-left: 143px;"
+          <div class="registe-div" style="margin-left: 115px;"
                ng-show="myForm.$submitted==true && myForm.password.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.password.$error.required && myForm.$submitted==true">密码不能为空</span>
@@ -79,7 +79,7 @@
 
           </div>
           </div>
-          <div class="registe-div" style="margin-left: 143px;" ng-show="myForm.$submitted==true && myForm.code.$invalid">
+          <div class="registe-div" style="margin-left: 115px;" ng-show="myForm.$submitted==true && myForm.code.$invalid">
           <span ng-style="{'color':'red'}"
           ng-show="myForm.code.$error.required && myForm.$submitted==true">验证码不能为空</span>
           </div>
@@ -89,7 +89,7 @@
           <input type="checkbox" name="is_active" ng-checked="vm.is_active" ng-init="vm.is_active = true"
                  ng-model="vm.is_active" required> <a href="javascript:void(0)" ng-click="vm.isDisplay = true">同意注册VRSEEN服务条款</a>
         </div>
-        <div class="registe-div" style="margin-left: 143px;"
+        <div class="registe-div" style="margin-left: 115px;"
              ng-show="myForm.$submitted==true && myForm.is_active.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.is_active.$error.required && myForm.$submitted==true">注册需同意服务条款</span>
