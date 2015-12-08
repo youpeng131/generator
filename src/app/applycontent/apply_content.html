@@ -175,8 +175,10 @@
         <div class="apply3-new-txt2"><a href="javascript:void(0)"
                                         ng-href="#/applycontent/{{list.id}}/">{{list.name}}</a></div>
         <div class="apply3-new-style">
-          <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
-        </div>
+          <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-apple'" ng-src="assets/images/style2.png" alt="">
+          <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-android'" ng-src="assets/images/style1.png" alt="">
+          <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'icon-finder'" ng-src="assets/images/style4.png" alt="">
+          <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-windows'" ng-src="assets/images/style3.png" alt="">         </div>
       </div>
 
     </div>
