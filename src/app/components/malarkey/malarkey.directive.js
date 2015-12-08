@@ -4,7 +4,8 @@
   angular
     .module('angularApp')
     .directive('acmeMalarkey', acmeMalarkey)
-    .directive('myCarousel', myCarousel);
+    .directive('myCarousel', myCarousel)
+    .directive('myScoller', myScoller);
 
   /** @ngInject */
   function acmeMalarkey(malarkey) {
@@ -104,6 +105,37 @@
       }
     };
   }
+
+  function  myScoller() {
+    return {
+      restrict: 'AE',
+      link: function (scope, element) {
+        if (scope.$last === true) {
+          var bigDiv = angular.element(document.querySelector('.config-img-big'))[0];
+          var oDiv = angular.element(document.querySelector('.config-img-little'))[0];
+          var oImg = oDiv.children;
+          oDiv.style.width = oImg[0].offsetWidth * oImg.length + 'px';
+          for (var i = 0; i < oImg.length; i++) {
+            (function(index) {
+              oImg[index].onmousemove = function() {
+                oImg[index].style.borderColor='red';
+                oImg[index].style.borderWidth='1px';
+                oImg[index].style.borderStyle='solid';
+                bigDiv.innerHTML = '<img src="'+oImg[index].src+'" alt='+index+'>';
+              };
+              oImg[index].onmouseout = function() {
+                oImg[index].style.borderColor='none';
+                oImg[index].style.borderWidth='0';
+                oImg[index].style.borderStyle='none';
+              }
+            })(i);
+          }
+        }
+      }
+    };
+  }
+
+
 
 
 })();

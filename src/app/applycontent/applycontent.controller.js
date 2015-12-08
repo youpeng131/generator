@@ -28,7 +28,7 @@
 
 
     /**************************测试环境**********************/
-
+    console.log(APP);
     // 查询findOneById
 
     if (DETAIL.app.id === AppId) {

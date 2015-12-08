@@ -6,7 +6,7 @@
           <input type="text" class="login_txt" placeholder="邮箱/手机号" name="username" ng-model="vm.username" required>
           <img src="assets/images/login1.png" alt="">
         </div>
-        <div style="margin-left: 5px;" ng-show="myForm.$submitted==true && myForm.username.$invalid">
+        <div style="margin-left: 10px;" ng-show="myForm.$submitted==true && myForm.username.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.username.$error.required && myForm.$submitted==true">用户名不能为空</span>
         </div>
@@ -14,7 +14,7 @@
           <input type="text" class="login_txt" placeholder="密码" name="password" ng-model="vm.password" required>
           <img src="assets/images/login2.png" alt="">
         </div>
-        <div style="margin-left: 5px;" ng-show="myForm.$submitted==true && myForm.password.$invalid">
+        <div style="margin-left: 10px;" ng-show="myForm.$submitted==true && myForm.password.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.password.$error.required && myForm.$submitted==true">密码不能为空</span>
         </div>
@@ -23,7 +23,7 @@
                  ng-model="vm.verification_code" required>
           <img src="assets/images/login3.png" alt="">
         </div>
-        <div style="margin-left: 5px;" ng-show="myForm.$submitted==true && myForm.verification_code.$invalid">
+        <div style="margin-left: 10px;" ng-show="myForm.$submitted==true && myForm.verification_code.$invalid">
           <span ng-style="{'color':'red'}"
                 ng-show="myForm.verification_code.$error.required && myForm.$submitted==true">验证码不能为空</span>
         </div>

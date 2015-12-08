@@ -7,7 +7,7 @@
       <div>
         <carousel interval="myInterval" no-wrap="noWrapSlides">
           <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <img ng-src="{{slide.image}}" style="margin:auto; width:100%;height:397px;" >
             <div class="carousel-caption">
               <h4>Slide{{$index}}</h4>
               <p>内容</p>
@@ -55,10 +55,10 @@
           <pagination style="margin: 3px 0;" total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm"
                       boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged()"></pagination>
         </div>
-        <div class="topage" style="line-height: 34px;;">
+        <div class="topage">
           共{{bigTotalItems}}页,到第
                             <span class="topage-span">
-                               <select style="width: 50px;height: 20px;display: inline-block;" class="form-control" ng-model="key" ng-options="o for o in totalItemArr"></select>
+                               <select style="width: 50px;height: 20px;display: inline-block;padding:0;" class="form-control" ng-model="key" ng-options="o for o in totalItemArr"></select>
                             </span>
           页
           <button class="make-sure" style="line-height: 21px;" ng-click="Jump(1)">确定</button>
@@ -66,7 +66,7 @@
       </div>
       <!-- 分页部分 -->
       <!-- <div class="config2-l-con">  -->
-      <div class="config2-l">
+      <div class="" style="border-top:1px solid #E8E8E8;">
         <ul class="index2-branch">
           <li><a href="javascript:void(0);">下载量</a></li>
           <li><a href="javascript:void(0);">IOS评分</a></li>
@@ -162,7 +162,7 @@
   <img ng-src="{{UserMainPageMiddleImage}}" alt="" width="100%">
 </div>
 <div class="div-c index3">
-  <div class="config2-l-tab">
+  <div class="config2-l-tab" style="line-height:38px;">
     <ul class="fl" ng-init="vm.activeTab=5">
       <li ng-class="{'config2-li-now': vm.activeTab == 5}"  >
         <a href="javascript:void(0);" ng-click="vm.activeTab = 5">热门推荐</a>

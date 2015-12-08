@@ -23,11 +23,11 @@
           <a ng-href="#/"><img src="assets/images/logo.png" alt="" class="fl logo"></a>
         </div>
         <div class="head-br fl">
-          <ul>
-            <li class="li-now">全部</li>
-            <li>安卓平台</li>
-            <li>苹果平台</li>
-            <li>mac平台</li>
+          <ul ng-init="vm.activeTab=1">
+            <li ng-class="{'li-now': vm.activeTab == 1}" ng-click="vm.activeTab = 1">全部</li>
+            <li ng-class="{'li-now': vm.activeTab == 2}" ng-click="vm.activeTab = 2">安卓平台</li>
+            <li ng-class="{'li-now': vm.activeTab == 3}" ng-click="vm.activeTab = 3">苹果平台</li>
+            <li ng-class="{'li-now': vm.activeTab == 4}" ng-click="vm.activeTab = 4">mac平台</li>
           </ul>
           <div class="search">
             <input type="text" placeholder="星球探险家" ng-model="vm.searchName">

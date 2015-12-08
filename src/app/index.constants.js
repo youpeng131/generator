@@ -403,23 +403,31 @@
           "id": 1,
           "app_images": [
             {
-              "image": "assets\/images\/shot-screen.png",
+              "image": "assets\/images\/img-big.png",
               "app_version_id": 1
             },
             {
-              "image": "assets\/images\/shot-screen.png",
+              "image": "assets\/images\/img-big.png",
               "app_version_id": 1
             },
             {
-              "image": "assets\/images\/shot-screen.png",
+              "image": "assets\/images\/img-big.png",
               "app_version_id": 1
             },
             {
-              "image": "assets\/images\/shot-screen.png",
+              "image": "assets\/images\/img-big.png",
               "app_version_id": 1
             },
             {
-              "image": "assets\/images\/shot-screen.png",
+              "image": "assets\/images\/img-big.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/img-big.png",
+              "app_version_id": 1
+            },
+            {
+              "image": "assets\/images\/img-big.png",
               "app_version_id": 1
             }
           ],
