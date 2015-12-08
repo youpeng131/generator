@@ -93,7 +93,10 @@
                 </div>
                 <div class="star-score fl">{{list.avg_score}}分</div>
                 <div class="index-style fr">
-                  <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
+                  <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-apple'" ng-src="assets/images/style2.png" alt="">
+                  <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-android'" ng-src="assets/images/style1.png" alt="">
+                  <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'icon-finder'" ng-src="assets/images/style4.png" alt="">
+                  <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-windows'" ng-src="assets/images/style3.png" alt="">
                 </div>
               </div>
             </div>
@@ -182,8 +185,10 @@
         <div class="apply-list-tit">
           <a ng-href="#/applycontent/{{list.id}}/" class="fl">{{list.name}}</a>
           <div class="style fr">
-            <img ng-repeat="platforms in list.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
-          </div>
+            <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-apple'" ng-src="assets/images/style2.png" alt="">
+            <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-android'" ng-src="assets/images/style1.png" alt="">
+            <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'icon-finder'" ng-src="assets/images/style4.png" alt="">
+            <img ng-repeat="platforms in list.app_platforms" ng-if="platforms.platform.icon == 'fa fa-windows'" ng-src="assets/images/style3.png" alt="">          </div>
         </div>
         <div class="apply-list-con">
           <div class="apply-list-tip">

@@ -11,8 +11,10 @@
       <div class="config1-tip">
         <div class="fl">{{detail.name}}</div>
         <div class="fr">
-          <img ng-repeat="platforms in detail.app_platforms" ng-src="{{platforms.platform.icon}}" alt="">
-        </div>
+          <img ng-repeat="platforms in detail.app_platforms" ng-if="platforms.platform.icon == 'fa fa-apple'" ng-src="assets/images/style2.png" alt="">
+          <img ng-repeat="platforms in detail.app_platforms" ng-if="platforms.platform.icon == 'fa fa-android'" ng-src="assets/images/style1.png" alt="">
+          <img ng-repeat="platforms in detail.app_platforms" ng-if="platforms.platform.icon == 'icon-finder'" ng-src="assets/images/style4.png" alt="">
+          <img ng-repeat="platforms in detail.app_platforms" ng-if="platforms.platform.icon == 'fa fa-windows'" ng-src="assets/images/style3.png" alt="">        </div>
       </div>
       <div class="config1-con">
         {{detail.max_version.description}}
