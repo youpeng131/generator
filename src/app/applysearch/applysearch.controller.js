@@ -10,7 +10,7 @@
     .controller('ApplySearchController', ApplySearchController);
 
   /** @ngInject */
-  function ApplySearchController($scope, $stateParams, APP, searchApps, $state) {
+  function ApplySearchController($scope, $stateParams, APP, searchApps, $state, $log) {
     var key = $stateParams.key;
     var vm = $scope.vm = {};
 
@@ -33,6 +33,7 @@
     };
 
     $scope.pageChanged = function() {
+      console.log($scope.bigTotalItems);
       $log.log('Page changed to: ' + $scope.currentPage);
     };
 
