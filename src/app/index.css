@@ -1644,15 +1644,15 @@ footer ul a {
 
 .index2 .fenye li a {
   border: 1px solid #F5F5F5;
-  background: #fff;
-  color: #2D374B;
+  /*background: #fff;
+  color: #2D374B;*/
 }
 .index2 .fenye .pagination li a:hover{
   border-color: #F5F5F5;
 }
 .index2 .fenye li a:hover {
-  background: #FF4400;
-  color: #fff;
+  /*background: #FF4400;*/
+  /*color: #fff;*/
 }
 
 .index2 .fenye .last-page, .index2 .fenye .first-page {
